@@ -32,7 +32,7 @@ namespace net3._1.Controllers
             return View();
         }
 
-        public PartialViewResult CarouselFirst()
+        public IActionResult CarouselFirst()
         {
             List<CarouselFirst> carousels = new List<CarouselFirst>()
             {
@@ -45,7 +45,7 @@ namespace net3._1.Controllers
                  new CarouselFirst("gallery-desktop-07.jpg","gallery-mobile-07.jpg"),
                  new CarouselFirst("gallery-desktop-08.jpg","gallery-mobile-08.jpg"),
             };
-            return PartialView(carousels );
+            return View( carousels );
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,11 +1,5 @@
 ﻿namespace net3._1.Models
 {
-    public class HomeModel
-    {
-
-    }
-
-
     public class CarouselFirst
     {
         public string Image { get; set; }
