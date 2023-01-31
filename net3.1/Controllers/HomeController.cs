@@ -29,24 +29,11 @@ namespace net3._1.Controllers
         }
         public IActionResult Page()
         {
+            ViewBag.CarouselList = CarouselFirst.getCarouseLList();
+
             return View();
         }
 
-        public IActionResult CarouselFirst()
-        {
-            List<CarouselFirst> carousels = new List<CarouselFirst>()
-            {
-                 new CarouselFirst("gallery-desktop-01.jpg","gallery-mobile-01.jpg"),
-                 new CarouselFirst("gallery-desktop-02.jpg","gallery-mobile-02.jpg"),
-                 new CarouselFirst("gallery-desktop-03.jpg","gallery-mobile-03.jpg"),
-                 new CarouselFirst("gallery-desktop-04.jpg","gallery-mobile-04.jpg"),
-                 new CarouselFirst("gallery-desktop-05.jpg","gallery-mobile-05.jpg"),
-                 new CarouselFirst("gallery-desktop-06.jpg","gallery-mobile-06.jpg"),
-                 new CarouselFirst("gallery-desktop-07.jpg","gallery-mobile-07.jpg"),
-                 new CarouselFirst("gallery-desktop-08.jpg","gallery-mobile-08.jpg"),
-            };
-            return View( carousels );
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
