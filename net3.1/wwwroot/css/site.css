@@ -1,4 +1,18 @@
-﻿a.navbar-brand {
+﻿#carouselFirst .carousel-inner img {
+  width: 100%;
+}
+#carouselFirst .carousel-indicators {
+  position: relative;
+}
+#carouselFirst .carousel-indicators > button {
+  background-color: #f00000;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+  background-clip: border-box;
+}
+
+a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
