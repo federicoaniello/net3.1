@@ -1,4 +1,6 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace net3._1.Models
 {
     public class CarouselFirst
