@@ -1,0 +1,13 @@
+﻿@model List<ShowCase>
+
+<main class="show-cases my-3">
+<section class="row">
+        @for (int i=0; i < Model.Count; i++)
+        {
+            <div class="col-12 col-md-4">
+                <img class="w-100" src="~/images/showcase/@(Model[i].Img).jpg" />
+            </div>
+        }
+    </section>
+
+</main>

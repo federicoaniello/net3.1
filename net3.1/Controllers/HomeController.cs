@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using net3._1.Models;
+using net3._1.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,7 +13,6 @@ namespace net3._1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -27,11 +27,14 @@ namespace net3._1.Controllers
         {
             return View(); 
         }
-        public IActionResult Page()
+        public IActionResult Page([FromServices] CarouselServices _carouselServices)
         {
-            ViewBag.CarouselList = CarouselFirst.getCarouseLList();
 
-            return View();
+            var HomePage = new HomePageViewModel();
+            HomePage.carousels = _carouselServices.GetCarouseLList();
+            HomePage.showCases = _carouselServices.GetShowCases();
+            HomePage.products = _carouselServices.GetProducts();
+            return View( HomePage );
         }
 
 

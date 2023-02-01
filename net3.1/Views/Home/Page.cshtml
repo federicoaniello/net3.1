@@ -1,8 +1,9 @@
-﻿@model List<CarouselFirst>
+﻿@model HomePageViewModel
 
 @{
     ViewData["Title"] = "Page";
 }
 
-
-@Html.Partial("_CarouselFirst")
+<partial name="_CarouselFirst" model="Model.carousels" ></partial>
+<partial name="_ShowCase" model="Model.showCases"></partial>
+<partial name="_Products" model="Model.products"></partial>
