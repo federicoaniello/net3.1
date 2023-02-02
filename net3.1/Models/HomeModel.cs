@@ -1,10 +1,12 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 namespace net3._1.Models
 {
+        [Table("carouselfirst", Schema = "public")]
     public class CarouselFirst
     {
+        [Key] public int Id { get; set; }
         public string Image { get; set; }
         public string ImageMobile { get; set; }
         public CarouselFirst() { }

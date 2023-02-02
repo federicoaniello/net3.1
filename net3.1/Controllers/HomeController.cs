@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using net3._1.Data;
 using net3._1.Models;
 using net3._1.Services;
 using System;
@@ -14,10 +15,13 @@ namespace net3._1.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly CarouselServices _carouselServices;
-        public HomeController(ILogger<HomeController> logger, CarouselServices carouselServices)
+        private readonly net3_1Context _context;
+
+        public HomeController(ILogger<HomeController> logger, CarouselServices carouselServices, net3_1Context context)
         {
             _logger = logger;
             _carouselServices = carouselServices;
+            _context = context;
         }
 
         public ActionResult Index()
@@ -33,7 +37,7 @@ namespace net3._1.Controllers
         {
 
             var HomePage = new HomePageViewModel();
-            HomePage.carousels = _carouselServices.GetCarouseLList();
+            HomePage.carousels = _context.CarouselFirst.ToList<CarouselFirst>();
             HomePage.showCases = _carouselServices.GetShowCases();
             HomePage.products = _carouselServices.GetProducts();
             HomePage.brands = _carouselServices.GetBrands();

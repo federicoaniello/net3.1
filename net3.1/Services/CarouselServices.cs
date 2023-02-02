@@ -6,7 +6,7 @@ namespace net3._1.Services
 {
     public class CarouselServices
     {
-        public List<CarouselFirst> GetCarouseLList()
+      /*public List<CarouselFirst> GetCarouseLList()
         {
             return new List<CarouselFirst>() {
                  new CarouselFirst("gallery-desktop-01.jpg","gallery-mobile-01.jpg"),
@@ -20,7 +20,7 @@ namespace net3._1.Services
             };
 
         }
-
+      */
         public List<ShowCase> GetShowCases()
         {
             return new List<ShowCase>() {

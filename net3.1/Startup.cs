@@ -1,14 +1,12 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using net3._1.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using net3._1.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace net3._1
 {
@@ -26,6 +24,9 @@ namespace net3._1
         {
             services.AddSingleton<CarouselServices>();
             services.AddControllersWithViews();
+
+            services.AddDbContext<net3_1Context>(options =>
+                    options.UseNpgsql(Configuration.GetConnectionString("net3_1Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
