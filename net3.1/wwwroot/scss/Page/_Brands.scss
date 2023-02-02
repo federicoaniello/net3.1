@@ -1,0 +1,18 @@
+﻿#brands-carousel {
+    .brands-list {
+        background: grey;
+    }
+
+    .product {
+        height: auto;
+        background: white;
+        align-items: center;
+        display: flex;
+
+        & > img {
+            object-fit: contain;
+            width: 100%;
+            transition: all ease-in-out 0.2s;
+        }
+    }
+}

@@ -20,7 +20,7 @@ namespace net3._1.Models
     public class Image
     {
         public string Img { get; set; }
-        public Image(string Img) { this.Img = Img; }
+        protected Image(string Img) { this.Img = Img; }
     }
 
     public class ShowCase : Image

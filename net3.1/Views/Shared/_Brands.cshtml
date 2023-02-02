@@ -5,16 +5,13 @@
 
 <main id="brands-carousel">
     <h3 class="text-center">Rivenditore Ufficiale di</h3>
-    <div class="swiper brands-list">
+    <div class="py-5 swiper brands-list">
 
         <div class="brands swiper-wrapper">
             @foreach (Brand prod in Model)
             {
                 <div class="product swiper-slide">
-                    <img src="/images/products/@(prod.Img)">
-                    <div class="info text-center my-2">
-                        <h6>@prod.Img </h6>
-                    </div>
+                    <img class="swiper-lazy" data-src="/images/brands/@(prod.Img)">
                 </div>
             }
         </div>

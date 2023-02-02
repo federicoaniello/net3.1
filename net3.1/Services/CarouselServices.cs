@@ -55,6 +55,15 @@ namespace net3._1.Services
         };
         }
 
+        public List<Brand> GetBrands()
+        {
+            List<Brand> ret = new List<Brand>();
+            for(int i=1; i < 24; i++)
+            {
+                ret.Add(new Brand($"brand-{(i.ToString().Length == 1 ? ("0" + i) : i.ToString()  )}.gif"));
+            };
+            return ret;
+        }
     }
 
 }

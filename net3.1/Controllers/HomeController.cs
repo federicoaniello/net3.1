@@ -36,6 +36,7 @@ namespace net3._1.Controllers
             HomePage.carousels = _carouselServices.GetCarouseLList();
             HomePage.showCases = _carouselServices.GetShowCases();
             HomePage.products = _carouselServices.GetProducts();
+            HomePage.brands = _carouselServices.GetBrands();
             return View( HomePage );
         }
 

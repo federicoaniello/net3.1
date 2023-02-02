@@ -45,6 +45,21 @@
   color: red;
 }
 
+#brands-carousel .brands-list {
+  background: grey;
+}
+#brands-carousel .product {
+  height: auto;
+  background: white;
+  align-items: center;
+  display: flex;
+}
+#brands-carousel .product > img {
+  object-fit: contain;
+  width: 100%;
+  transition: all ease-in-out 0.2s;
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
