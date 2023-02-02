@@ -5,19 +5,26 @@
         color: black;
     }
 
-    .brands-list {
-    }
 
     .product {
         height: auto;
         background: white;
         align-items: center;
         display: flex;
-
+        transition: all ease-in-out 0.2s;
+        opacity:1;
         & > img {
             object-fit: contain;
             width: 100%;
             transition: all ease-in-out 0.2s;
+        }
+
+        .swiper-lazy {
+            opacity: 0;
+
+            &-loaded {
+                opacity: 1;
+            }
         }
     }
 }

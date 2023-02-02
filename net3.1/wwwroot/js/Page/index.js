@@ -2,10 +2,7 @@
     slidesPerView: 1.5,
     centeredSlides:true,
     spaceBetween: 10,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
+    navigation: true,
     breakpoints: {
         768: {
             centeredSlides: false,
@@ -21,10 +18,7 @@ var swiper = new Swiper(".brands-list", {
     preloadImages: false,
     lazy: true,
     spaceBetween: 30,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
+    navigation: true,
     breakpoints: {
         768: {
             slidesPerView: 8,
