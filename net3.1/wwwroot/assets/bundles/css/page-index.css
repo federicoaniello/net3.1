@@ -33,6 +33,11 @@
   width: 100%;
   transition: all ease-in-out 0.2s;
 }
+@media (max-width: 767px) {
+  #partial-products .product > img {
+    max-height: 400px;
+  }
+}
 #partial-products .product > img:hover {
   transform: scale(105%);
 }
@@ -45,8 +50,11 @@
   color: red;
 }
 
-#brands-carousel .brands-list {
+#brands-carousel {
   background: grey;
+}
+#brands-carousel .swiper-button-next, #brands-carousel .swiper-button-prev {
+  color: black;
 }
 #brands-carousel .product {
   height: auto;
@@ -58,6 +66,23 @@
   object-fit: contain;
   width: 100%;
   transition: all ease-in-out 0.2s;
+}
+
+.show-cases .row > div {
+  position: relative;
+}
+.show-cases .row > div::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  bottom: 16px;
+  left: 30px;
+  height: 4px;
+  transition: all 0.2s;
+  background: #600;
+}
+.show-cases .row > div:hover::after {
+  width: 60px;
 }
 
 a.navbar-brand {

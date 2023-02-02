@@ -1,0 +1,18 @@
+﻿.show-cases .row > div {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        bottom: 16px;
+        left: 30px;
+        height: 4px;
+        transition: all 0.2s;
+        background: #600;
+    }
+
+    &:hover::after {
+        width: 60px;
+    }
+}

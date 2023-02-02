@@ -5,7 +5,8 @@
 
 <main id="brands-carousel">
     <h3 class="text-center">Rivenditore Ufficiale di</h3>
-    <div class="py-5 swiper brands-list">
+    <div class="container-md">
+    <div class="py-5 px-1 swiper brands-list">
 
         <div class="brands swiper-wrapper">
             @foreach (Brand prod in Model)
@@ -15,5 +16,8 @@
                 </div>
             }
         </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
     </div>
 </main>

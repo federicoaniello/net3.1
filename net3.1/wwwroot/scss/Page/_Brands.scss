@@ -1,6 +1,11 @@
 ﻿#brands-carousel {
+    background: grey;
+
+    .swiper-button-next, .swiper-button-prev {
+        color: black;
+    }
+
     .brands-list {
-        background: grey;
     }
 
     .product {
