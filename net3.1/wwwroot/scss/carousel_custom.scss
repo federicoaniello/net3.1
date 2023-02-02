@@ -1,16 +1,21 @@
 ﻿#carouselFirst {
 
-    .carousel-inner img{
-        width:100%;
+    .carousel-inner img {
+        width: 100%;
     }
-    .carousel-indicators {
-        position:relative;
-        & > button {
-            background-color: #f00000;
-            width: 20px;
-            height: 20px;
-            margin-top: 10px;
-            background-clip: border-box;
-        }
+.carousel-indicators {
+    position: relative;
+
+    & > button {
+        background-color: #f00000;
+        width: 10px;
+        height: 10px;
+        margin-top: 10px;
+        background-clip: border-box;
+        border-top: 0;
+        border-bottom: 0;
+        border-radius: 15px;
     }
 }
+}
+
