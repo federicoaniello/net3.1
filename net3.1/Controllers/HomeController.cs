@@ -13,9 +13,11 @@ namespace net3._1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        public HomeController(ILogger<HomeController> logger)
+        private readonly CarouselServices _carouselServices;
+        public HomeController(ILogger<HomeController> logger, CarouselServices carouselServices)
         {
             _logger = logger;
+            _carouselServices = carouselServices;
         }
 
         public ActionResult Index()
@@ -27,7 +29,7 @@ namespace net3._1.Controllers
         {
             return View(); 
         }
-        public IActionResult Page([FromServices] CarouselServices _carouselServices)
+        public IActionResult Page()
         {
 
             var HomePage = new HomePageViewModel();

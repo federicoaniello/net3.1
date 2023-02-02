@@ -1,18 +1,48 @@
-﻿#carouselFirst .carousel-inner img {
+﻿#carouselFirst .carousel-control-next, #carouselFirst .carousel-control-prev {
+  top: 50%;
+  width: fit-content;
+  background: 0 0 rgba(0, 0, 0, 0.4588235294);
+  height: fit-content;
+  padding: 8px;
+  border-radius: 28px;
+  transform: translateY(-50%);
+}
+#carouselFirst .carousel-inner img {
   width: 100%;
 }
 #carouselFirst .carousel-indicators {
   position: relative;
 }
+#carouselFirst .carousel-indicators .active {
+  background-color: red !important;
+}
 #carouselFirst .carousel-indicators > button {
-  background-color: #f00000;
-  width: 10px;
-  height: 10px;
   margin-top: 10px;
   background-clip: border-box;
   border-top: 0;
   border-bottom: 0;
   border-radius: 15px;
+  background-color: #d2d2d2;
+  width: 6px;
+  height: 6px;
+  border: 1px solid red;
+}
+
+#partial-products .product > img {
+  object-fit: contain;
+  width: 100%;
+  transition: all ease-in-out 0.2s;
+}
+#partial-products .product > img:hover {
+  transform: scale(105%);
+}
+@media (max-width: 767px) {
+  #partial-products .product > img:hover {
+    transform: scale(102%);
+  }
+}
+#partial-products .info p {
+  color: red;
 }
 
 a.navbar-brand {

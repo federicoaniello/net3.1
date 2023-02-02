@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -7,12 +7,11 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
-    <Content Remove="wwwroot\scss\carousel_custom.scss" />
+    <Content Remove="wwwroot\scss\_CarouselFirst.scss" />
   </ItemGroup>
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="compilerconfig.json" />
-    <_ContentIncludedByDefault Remove="wwwroot\css\site.css" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,7 +44,7 @@
     <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
     <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
     <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
-    <None Include="wwwroot\scss\carousel_custom.scss" />
+    <None Include="wwwroot\scss\Page\_CarouselFirst.scss" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,7 +52,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\assets\bundles\js\" />
+    <Folder Include="wwwroot\assets\bundles\css\" />
+    <Folder Include="wwwroot\assets\bundles\" />
   </ItemGroup>
 
 </Project>

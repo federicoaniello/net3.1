@@ -44,7 +44,7 @@ namespace net3._1.Services
             new Product("pulpo","Oda in between","Lampada a terra LEd","product-06.jpg",219.29),
             new Product("Esempio 2","Oda in between","Lampada a terra LEd","product-07.jpg",21),
             new Product("pulpo","Oda in between","Lampada a terra LEd","product-08.jpg",21), 
-            new Product("pulpo","Oda in between","Lampada a terra LEd","product-09.jpg.jpg",21),
+            new Product("pulpo","Oda in between","Lampada a terra LEd","product-09.jpg",21),
             new Product("pulpo","Oda in between","Lampada a terra LEd","product-10.jpg",91.99),
             new Product("pulpo","Oda in between","Lampada a terra LEd","product-11.jpg",21),
             new Product("pulpo","Oda in between","Lampada a terra LEd","product-12.jpg",43.17),

@@ -1,0 +1,36 @@
+﻿#carouselFirst {
+    .carousel-control-next, .carousel-control-prev {
+        top: 50%;
+        width: fit-content;
+        background: 0 0 #00000075;
+        height: fit-content;
+        padding: 8px;
+        border-radius: 28px;
+        transform: translateY(-50%);
+    }
+
+
+    .carousel-inner img {
+        width: 100%;
+    }
+
+    .carousel-indicators {
+        position: relative;
+
+        & .active {
+            background-color: red !important;
+        }
+
+        & > button {
+            margin-top: 10px;
+            background-clip: border-box;
+            border-top: 0;
+            border-bottom: 0;
+            border-radius: 15px;
+            background-color: #d2d2d2;
+            width: 6px;
+            height: 6px;
+            border: 1px solid red;
+        }
+    }
+}

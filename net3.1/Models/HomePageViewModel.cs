@@ -7,5 +7,6 @@ namespace net3._1.Models
         public List<CarouselFirst> carousels;
         public List<ShowCase> showCases;
         public List<Product> products;
+        public List<Brand> brands;
     }
 }

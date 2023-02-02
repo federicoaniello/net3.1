@@ -17,10 +17,26 @@ namespace net3._1.Models
 
     }
 
-    public class ShowCase
+    public class Image
     {
         public string Img { get; set; }
-        public ShowCase(string Img) { this.Img = Img; }
+        public Image(string Img) { this.Img = Img; }
+    }
+
+    public class ShowCase : Image
+    {
+        public ShowCase(string Img) : base(Img)
+        {
+       
+        }
+    }
+
+    public class Brand : Image
+    {
+        public Brand(string Img) : base(Img)
+        {
+
+        }
     }
 
     public class Product
@@ -40,4 +56,5 @@ namespace net3._1.Models
         }
 
     }
+
 }

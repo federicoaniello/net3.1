@@ -3,15 +3,22 @@
 @{
     ViewData["Title"] = "Pagina di prova";
 }
-
-
 @section Scripts{
-    <script>
-        console.log('PRODUCT')
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+       <script src="~/assets/bundles/js/page-index.js"></script>
     }
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" href="~/assets/bundles/css/page-index.css" />
 
 
 <partial name="_CarouselFirst" model="Model.carousels" ></partial>
+<div class="text-center my-4 ">
+    <p class="fw-bold mb-0">Archiproducts Shop Online</p>
+    <p class="mb-0">Ecommerce di arredamento, illuminazione, bango cucina</p>
+</div>
 <partial name="_ShowCase" model="Model.showCases"></partial>
 <partial name="_Products" model="Model.products"></partial>

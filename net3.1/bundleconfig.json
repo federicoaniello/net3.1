@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "wwwroot/assets/bundles/js/page-index.js",
+    "inputFiles": [
+      "wwwroot/js/Page/index.js",
+      "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]
