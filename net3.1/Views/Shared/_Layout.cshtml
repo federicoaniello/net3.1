@@ -33,6 +33,22 @@
             </div>
         </nav>
     </header>
+    <header id="archi-navbar" class="">
+        <nav class="container">
+            <section class="d-flex justify-content-between">
+                <figure class="img-wrapper">
+                    <img src="" alt="archiproducts Logo" />
+                </figure>
+                <div class="search-bar">
+                    <input type="text"  />
+                </div>
+                <div class="basket">
+
+                </div>
+            </section>
+            <section></section>
+        </nav>
+    </header>
     <div class="">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -44,6 +60,7 @@
             &copy; 2023 - net3._1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+    <script src="~/lib/vue/dist/js/vue.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)

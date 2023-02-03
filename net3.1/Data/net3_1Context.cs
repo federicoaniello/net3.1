@@ -14,6 +14,5 @@ namespace net3._1.Data
         {
         }
 
-        public DbSet<net3._1.Models.CarouselFirst> CarouselFirst { get; set; }
     }
 }

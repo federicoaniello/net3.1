@@ -1,4 +1,14 @@
-﻿var swiper = new Swiper(".product--list", {
+﻿var btn = document.getElementById('doListSearch');
+
+btn.addEventListener("click", function () {
+
+    fetch("https://localhost:44367/CarouselFirsts/GetAllCarousels").then(val => {
+        console.log(val)
+    })
+})
+
+
+var swiper = new Swiper(".product--list", {
     slidesPerView: 1.5,
     centeredSlides:true,
     spaceBetween: 10,

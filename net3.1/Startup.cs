@@ -26,7 +26,7 @@ namespace net3._1
             services.AddControllersWithViews();
 
             services.AddDbContext<net3_1Context>(options =>
-                    options.UseNpgsql(Configuration.GetConnectionString("net3_1Context")));
+                   options.UseNpgsql(Configuration.GetConnectionString("net3_1Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

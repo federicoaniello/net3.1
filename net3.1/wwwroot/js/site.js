@@ -3,13 +3,3 @@
 
 // Write your JavaScript code.
 
-console.log('TEST');
-
-function test() {
-    var variable_x = 34;
-
-    console.log(variable_x);
-    return variable_x;
-
-
-}
