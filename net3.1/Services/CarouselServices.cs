@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using net3._1.Models;
+﻿using net3._1.Models;
 using System.Collections.Generic;
 
 namespace net3._1.Services
 {
     public class CarouselServices
     {
-      public List<CarouselFirst> GetCarouselList()
+        public List<CarouselFirst> GetCarouselList()
         {
             return new List<CarouselFirst>() {
                  new CarouselFirst("gallery-desktop-01.jpg","gallery-mobile-01.jpg"),
@@ -20,7 +19,7 @@ namespace net3._1.Services
             };
 
         }
-      
+
         public List<ShowCase> GetShowCases()
         {
             return new List<ShowCase>() {
@@ -43,7 +42,7 @@ namespace net3._1.Services
             new Product("pulpo","Oda in between","Lampada a terra LEd","product-05.jpg",21),
             new Product("pulpo","Oda in between","Lampada a terra LEd","product-06.jpg",219.29),
             new Product("Esempio 2","Oda in between","Lampada a terra LEd","product-07.jpg",21),
-            new Product("pulpo","Oda in between","Lampada a terra LEd","product-08.jpg",21), 
+            new Product("pulpo","Oda in between","Lampada a terra LEd","product-08.jpg",21),
             new Product("pulpo","Oda in between","Lampada a terra LEd","product-09.jpg",21),
             new Product("pulpo","Oda in between","Lampada a terra LEd","product-10.jpg",91.99),
             new Product("pulpo","Oda in between","Lampada a terra LEd","product-11.jpg",21),
@@ -58,9 +57,9 @@ namespace net3._1.Services
         public List<Brand> GetBrands()
         {
             List<Brand> ret = new List<Brand>();
-            for(int i=1; i < 24; i++)
+            for (int i = 1; i < 24; i++)
             {
-                ret.Add(new Brand($"brand-{(i.ToString().Length == 1 ? ("0" + i) : i.ToString()  )}.gif"));
+                ret.Add(new Brand($"brand-{(i.ToString().Length == 1 ? ("0" + i) : i.ToString())}.gif"));
             };
             return ret;
         }

@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using net3._1.Data;
 using net3._1.Models;
 using net3._1.Services;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace net3._1.Controllers
 {

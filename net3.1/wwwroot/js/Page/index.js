@@ -1,11 +1,4 @@
-﻿var btn = document.getElementById('doListSearch');
-
-btn.addEventListener("click", function () {
-
-    fetch("https://localhost:44367/CarouselFirsts/GetAllCarousels").then(val => {
-        console.log(val)
-    })
-})
+﻿
 
 
 var swiper = new Swiper(".product--list", {
@@ -22,17 +15,4 @@ var swiper = new Swiper(".product--list", {
     }
 });
 
-var swiper = new Swiper(".brands-list", {
-    slidesPerView: 2,
-    watchSlidesVisibility: true,
-    preloadImages: false,
-    lazy: true,
-    spaceBetween: 30,
-    navigation: true,
-    breakpoints: {
-        768: {
-            slidesPerView: 8,
-            spaceBetween: 20
-        }
-    }
-});
+

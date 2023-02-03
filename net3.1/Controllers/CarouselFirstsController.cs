@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using net3._1.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using net3._1.Models;
 using net3._1.Services;
+using System.Collections.Generic;
 
 namespace net3._1.Controllers
 {
@@ -20,7 +14,7 @@ namespace net3._1.Controllers
             _backend = backend;
         }
 
-       
+
         public ActionResult<List<CarouselFirst>> GetAllCarousels()
         {
             var lst = _backend.GetCarouselList();
@@ -31,6 +25,6 @@ namespace net3._1.Controllers
         }
 
 
-  
+
     }
 }

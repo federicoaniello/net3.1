@@ -1,5 +1,3 @@
-using System;
-
 namespace net3._1.Models
 {
     public class ErrorViewModel

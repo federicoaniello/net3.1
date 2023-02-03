@@ -3,11 +3,7 @@ using Microsoft.Extensions.Logging;
 using net3._1.Data;
 using net3._1.Models;
 using net3._1.Services;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace net3._1.Controllers
 {
@@ -26,12 +22,12 @@ namespace net3._1.Controllers
 
         public ActionResult Index()
         {
-             return View();
+            return View();
         }
 
         public IActionResult Privacy()
         {
-            return View(); 
+            return View();
         }
         public IActionResult Page()
         {
@@ -39,9 +35,7 @@ namespace net3._1.Controllers
             var HomePage = new HomePageViewModel();
             HomePage.carousels = _carouselServices.GetCarouselList();
             HomePage.showCases = _carouselServices.GetShowCases();
-            HomePage.products = _carouselServices.GetProducts();
-            HomePage.brands = _carouselServices.GetBrands();
-            return View( HomePage );
+            return View(HomePage);
         }
 
 
