@@ -1,6 +1,6 @@
 ﻿[
   {
     "outputFile": "wwwroot/assets/bundles/css/page-index.css",
-    "inputFile":"wwwroot/scss/index.scss"
+    "inputFile": "wwwroot/scss/index.scss"
   }
 ]

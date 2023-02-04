@@ -4,15 +4,26 @@
     ViewData["Title"] = "Pagina di prova";
 }
 @section Scripts{
-       <script src="~/assets/bundles/js/page-index.js"></script>
-           <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script defer  src="~/js/Page/index.js"></script>
        <script>
-        const swiperEl = document.querySelector('swiper-container');
-      var { createApp, ref,onMounted } = Vue;
+      var { createApp, ref,onUpdated, onBeforeMount } = Vue;
   createApp({
     setup() {
-                var swiperParams = {
+     var brands = ref([]);
+             onBeforeMount( async () => {
+                        const res = await fetch("/Brands/GetAllBrands");
+                    if(res.statusText !== "OK") return;
+                    const brnds = await res.json();
+                        brands.value = brnds;
+             })
+
+                onUpdated(() => {
+             
+
+                        const imageProductsContainer = document.getElementById("products-component");
+const swiperEl = document.querySelector('swiper-container');
+
+var swiperParams = {
     slidesPerView: 2,
     watchSlidesVisibility: true,
     preloadImages: false,
@@ -26,20 +37,15 @@
     }
 };
 
-     var brands = ref([]);
-                // now we need to assign all parameters to Swiper element
-                Object.assign(swiperEl, swiperParams);
-
-                // and now initialize it
-
-
-
-                    onMounted( async () => {
-                                        swiperEl.initialize();
-                    const res = await fetch("/Brands/GetAllBrands");
-                    if(res.statusText !== "OK") return;
-                    const brnds = await res.json();
-                        brands.value = brnds;
+Object.assign(swiperEl, swiperParams);
+swiperEl.initialize();
+const imagesProducts = imageProductsContainer.querySelectorAll("[data-src]");
+imagesProducts.forEach(img => {
+    let attribute = img.dataset['src'];
+    img.removeAttribute('data-src');
+    img.setAttribute('src',attribute);
+})
+console.log(imagesProducts);
      });
                 return {
                     brands
@@ -71,8 +77,7 @@
                 <swiper-container id="swiper-brands" init="false">
                     <swiper-slide v-for="(brand, index) in brands" :key="index">
                         <div class="product">
-                            <img :src="['/images/brands/' + brand.img]" /> 
-                           <img src="/images/brands/brand-01.gif" />
+                            <img :data-src="['/images/brands/' + brand.img]" /> 
                         </div>
                     </swiper-slide>
                 </swiper-container>
