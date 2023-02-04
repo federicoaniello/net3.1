@@ -50,13 +50,13 @@
   color: red;
 }
 
-#brands-carousel {
+#products-component {
   background: grey;
 }
-#brands-carousel .swiper-button-next, #brands-carousel .swiper-button-prev {
+#products-component .swiper-button-next, #products-component .swiper-button-prev {
   color: black;
 }
-#brands-carousel .product {
+#products-component .product {
   height: auto;
   background: white;
   align-items: center;
@@ -64,15 +64,15 @@
   transition: all ease-in-out 0.2s;
   opacity: 1;
 }
-#brands-carousel .product > img {
+#products-component .product > img {
   object-fit: contain;
   width: 100%;
   transition: all ease-in-out 0.2s;
 }
-#brands-carousel .product .swiper-lazy {
+#products-component .product .swiper-lazy {
   opacity: 0;
 }
-#brands-carousel .product .swiper-lazy-loaded {
+#products-component .product .swiper-lazy-loaded {
   opacity: 1;
 }
 

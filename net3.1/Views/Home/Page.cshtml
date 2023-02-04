@@ -6,21 +6,25 @@
 @section Scripts{
     <script defer  src="~/js/Page/index.js"></script>
        <script>
-      var { createApp, ref,onUpdated, onBeforeMount } = Vue;
+      var { createApp, ref,onUpdated, onMounted } = Vue;
   createApp({
     setup() {
+                                const imageProductsContainer = document.getElementById("products-component");
+
      var brands = ref([]);
-             onBeforeMount( async () => {
-                        const res = await fetch("/Brands/GetAllBrands");
-                    if(res.statusText !== "OK") return;
-                    const brnds = await res.json();
-                        brands.value = brnds;
-             })
 
-                onUpdated(() => {
-             
-
-                        const imageProductsContainer = document.getElementById("products-component");
+     onUpdated(() => {
+                    const imagesProducts = imageProductsContainer.querySelectorAll("[data-src]");
+                    imagesProducts.forEach(img => {
+                        let attribute = img.dataset['src'];
+                        img.removeAttribute('data-src');
+                        img.setAttribute('src', attribute);
+                    })
+                    console.log(imagesProducts);
+                    document.querySelector('swiper-container').style.opacity = 1;
+     })
+                onMounted(() => {
+           
 const swiperEl = document.querySelector('swiper-container');
 
 var swiperParams = {
@@ -39,13 +43,27 @@ var swiperParams = {
 
 Object.assign(swiperEl, swiperParams);
 swiperEl.initialize();
-const imagesProducts = imageProductsContainer.querySelectorAll("[data-src]");
-imagesProducts.forEach(img => {
-    let attribute = img.dataset['src'];
-    img.removeAttribute('data-src');
-    img.setAttribute('src',attribute);
-})
-console.log(imagesProducts);
+let options = {
+  root:null,
+  threshold: 0.10
+};
+                    let callback = (entries, observer) => {
+                        console.log(entries,observer)
+                        entries.forEach((entry) => {
+                            if(entry.isIntersecting && brands.value.length ===0){
+                         fetch("/Brands/GetAllBrands").then(res =>{
+                                    if (res.statusText !== "OK") return;
+                                    res.json().then(brnds => {
+                        brands.value = brnds;
+                                    })
+                        })             
+                            }
+          
+                        });
+                    };
+
+const intersect = new IntersectionObserver(callback,options);
+                    intersect.observe(imageProductsContainer);
      });
                 return {
                     brands
@@ -69,19 +87,18 @@ console.log(imagesProducts);
     <p class="mb-0">Ecommerce di arredamento, illuminazione, bango cucina</p>
 </div>
 <partial name="_ShowCase" model="Model.showCases"></partial>
-
-<div id="products-component">
-        <main id="brands-carousel">
-            <h3 class="text-center py-5 pb-4">Rivenditore Ufficiale di</h3>
-            <div class="container-md pb-5">
-                <swiper-container id="swiper-brands" init="false">
-                    <swiper-slide v-for="(brand, index) in brands" :key="index">
-                        <div class="product">
-                            <img :data-src="['/images/brands/' + brand.img]" /> 
-                        </div>
-                    </swiper-slide>
-                </swiper-container>
-            </div>
-        </main>
 </div>
+<div id="products-component">
+    <main id="brands-carousel">
+        <h3 class="text-center py-5 pb-4">Rivenditore Ufficiale di</h3>
+        <div class="container-md pb-5">
+            <swiper-container style="opacity:0; transition:opacity 1s;" id="swiper-brands" init="false">
+                <swiper-slide v-for="(brand, index) in brands" :key="index">
+                    <div class="product">
+                        <img :data-src="['/images/brands/' + brand.img]" />
+                    </div>
+                </swiper-slide>
+            </swiper-container>
+        </div>
+    </main>
 </div>

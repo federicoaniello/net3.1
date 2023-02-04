@@ -1,4 +1,4 @@
-﻿#brands-carousel {
+﻿#products-component {
     background: grey;
 
     .swiper-button-next, .swiper-button-prev {
@@ -12,7 +12,8 @@
         align-items: center;
         display: flex;
         transition: all ease-in-out 0.2s;
-        opacity:1;
+        opacity: 1;
+
         & > img {
             object-fit: contain;
             width: 100%;
