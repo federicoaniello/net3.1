@@ -4,7 +4,9 @@
     ViewData["Title"] = "Pagina di prova";
 }
 @section Scripts{
-    <script defer src="~/js/Page/index.js"></script>
+    <script type="module" src="~/js/Page/utilities.js"></script>
+
+    <script src="~/js/Page/index.js"></script>
     <script>
 
     </script>
@@ -24,3 +26,7 @@
     <partial name="_ShowCase" model="Model.showCases"></partial>
 </div>
 <partial name="_Brands"></partial>
+
+<div class="container-md">
+    <partial name="_Spot"></partial>
+</div>

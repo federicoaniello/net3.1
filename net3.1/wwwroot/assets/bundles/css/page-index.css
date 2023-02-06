@@ -56,7 +56,7 @@
 #brands-component .swiper-button-next, #brands-component .swiper-button-prev {
   color: black;
 }
-#brands-component .product {
+#brands-component .brand {
   height: auto;
   background: white;
   align-items: center;
@@ -64,15 +64,15 @@
   transition: all ease-in-out 0.2s;
   opacity: 1;
 }
-#brands-component .product > img {
+#brands-component .brand > img {
   object-fit: contain;
   width: 100%;
   transition: all ease-in-out 0.2s;
 }
-#brands-component .product .swiper-lazy {
+#brands-component .brand .swiper-lazy {
   opacity: 0;
 }
-#brands-component .product .swiper-lazy-loaded {
+#brands-component .brand .swiper-lazy-loaded {
   opacity: 1;
 }
 
@@ -91,6 +91,37 @@
 }
 .show-cases .row > div:hover::after {
   width: 60px;
+}
+
+#spot-component section > div {
+  transition: all 0.2s;
+}
+#spot-component section > div small {
+  opacity: 0;
+  transition: all 0.2s;
+}
+#spot-component section > div:hover {
+  position: relative;
+  transform: translateY(-10px);
+}
+#spot-component section > div:hover small {
+  opacity: 1;
+}
+#spot-component section > div > p {
+  margin-bottom: 0;
+}
+#spot-component section > div > p::after {
+  content: "";
+  width: 50px;
+  height: 4px;
+  background-color: red;
+  display: block;
+  margin: 10px auto 0;
+}
+@media (max-width: 767px) {
+  #spot-component section > div > p::after {
+    display: none;
+  }
 }
 
 a.navbar-brand {
