@@ -1,22 +1,98 @@
-﻿@model List<Brand>
-
-
-
-
-<main id="brands-carousel">
-    <h3 class="text-center py-5 pb-4">Rivenditore Ufficiale di</h3>
-    <div class="container-md pb-5">
-    <div class=" px-1 swiper brands-list">
-
-        <div class="brands swiper-wrapper">
-            @foreach (Brand prod in Model)
-            {
-                <div class="product swiper-slide">
-                    <img class="swiper-lazy" data-src="/images/brands/@(prod.Img)">
-                </div>
-            }
+﻿<div id="brands-component">
+    <main id="brands-carousel">
+        <h3 class="text-center py-5 pb-4">Rivenditore Ufficiale di</h3>
+        <div class="container-md pb-5">
+            <swiper-container style="opacity:0; transition:opacity 1s;" id="swiper-brands-container" init="false">
+            </swiper-container>
         </div>
-        
-    </div>
-    </div>
-</main>
+    </main> 
+</div>
+
+
+<script>
+    const brands_component = document.getElementById("brands-component");
+    const brands_swiper_container = document.getElementById("swiper-brands-container");
+
+
+    /**
+     * Scarica le immagini utilizzando il link selezionato
+     */
+    function download(link) {
+            fetch(link).then(res => {
+                if (res.statusText !== "OK") return;
+                res.json().then(value => {
+                    populate(value);
+                    initializeSwiper();
+                })
+            })
+    }
+
+
+
+    /**
+     * Callback da eseguire ogni volta che nell intersection observer
+     */
+    const brandsCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+            console.log(entry)
+            if (entry.isIntersecting) {
+                console.log("INTERSECTED");
+                download("/Brands/GetAllBrands");
+                observer.unobserve(entry.target);
+            }
+        })
+    }
+
+
+    /**
+     * Crea le swiper-slide per l elemento swiper in base ai risultati dell'API, e li inserisce nello swiper-container.
+     */
+    function populate(arrayOfValues) {
+        arrayOfValues.forEach(el => {
+            const slide = document.createElement('swiper-slide');
+
+
+            const slide_div = document.createElement('div');
+            slide_div.classList.add('brand');
+            const img = document.createElement('img');
+            img.setAttribute('src', `/images/brands/${el.img}`);
+            img.classList.add('w-100');
+            slide_div.append(img);
+            slide.append(slide_div);
+            brands_swiper_container.appendChild(slide);
+
+        })
+    }
+
+
+    /**
+     * Inizializza Swiper.
+     */
+    function initializeSwiper(){
+
+        const swiperParams = {
+    slidesPerView: 2,
+    watchSlidesVisibility: true,
+    preloadImages: false,
+    spaceBetween: 30,
+    navigation: true,
+    breakpoints: {
+        768: {
+            slidesPerView: 8,
+            spaceBetween: 20
+        }
+    }
+};
+
+        Object.assign(brands_swiper_container, swiperParams);
+        brands_swiper_container.initialize();
+        brands_swiper_container.style.opacity = 1;
+    }
+
+
+
+    const brands_component_observer = new IntersectionObserver(brandsCallback,{ root: null, threshold: 0.1});
+    brands_component_observer.observe(brands_component);
+
+
+</script>

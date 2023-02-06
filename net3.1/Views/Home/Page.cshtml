@@ -4,101 +4,23 @@
     ViewData["Title"] = "Pagina di prova";
 }
 @section Scripts{
-    <script defer  src="~/js/Page/index.js"></script>
-       <script>
-      var { createApp, ref,onUpdated, onMounted } = Vue;
-  createApp({
-    setup() {
-                                const imageProductsContainer = document.getElementById("products-component");
+    <script defer src="~/js/Page/index.js"></script>
+    <script>
 
-     var brands = ref([]);
-
-     onUpdated(() => {
-                    const imagesProducts = imageProductsContainer.querySelectorAll("[data-src]");
-                    imagesProducts.forEach(img => {
-                        let attribute = img.dataset['src'];
-                        img.removeAttribute('data-src');
-                        img.setAttribute('src', attribute);
-                    })
-                    console.log(imagesProducts);
-                    document.querySelector('swiper-container').style.opacity = 1;
-     })
-                onMounted(() => {
-           
-const swiperEl = document.querySelector('swiper-container');
-
-var swiperParams = {
-    slidesPerView: 2,
-    watchSlidesVisibility: true,
-    preloadImages: false,
-    spaceBetween: 30,
-    navigation: true,
-    breakpoints: {
-        768: {
-            slidesPerView: 8,
-            spaceBetween: 20
-        }
-    }
-};
-
-Object.assign(swiperEl, swiperParams);
-swiperEl.initialize();
-let options = {
-  root:null,
-  threshold: 0.10
-};
-                    let callback = (entries, observer) => {
-                        console.log(entries,observer)
-                        entries.forEach((entry) => {
-                            if(entry.isIntersecting && brands.value.length ===0){
-                         fetch("/Brands/GetAllBrands").then(res =>{
-                                    if (res.statusText !== "OK") return;
-                                    res.json().then(brnds => {
-                        brands.value = brnds;
-                                    })
-                        })             
-                            }
-          
-                        });
-                    };
-
-const intersect = new IntersectionObserver(callback,options);
-                    intersect.observe(imageProductsContainer);
-     });
-                return {
-                    brands
-                }
-    }
-        }).mount('#products-component')
-       </script>
+    </script>
     }
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-/>
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <link rel="stylesheet" href="~/assets/bundles/css/page-index.css" />
 
 <div class="container-md">
-    
-<partial name="_CarouselFirst" model="Model.carousels" ></partial>
-<div class="text-center my-4 ">
-    <p class="fw-bold mb-0">Archiproducts Shop Online</p>
-    <p class="mb-0">Ecommerce di arredamento, illuminazione, bango cucina</p>
+
+    <partial name="_CarouselFirst" model="Model.carousels"></partial>
+    <div class="text-center my-4 ">
+        <p class="fw-bold mb-0">Archiproducts Shop Online</p>
+        <p class="mb-0">Ecommerce di arredamento, illuminazione, bango cucina</p>
+    </div>
+    <partial name="_ShowCase" model="Model.showCases"></partial>
 </div>
-<partial name="_ShowCase" model="Model.showCases"></partial>
-</div>
-<div id="products-component">
-    <main id="brands-carousel">
-        <h3 class="text-center py-5 pb-4">Rivenditore Ufficiale di</h3>
-        <div class="container-md pb-5">
-            <swiper-container style="opacity:0; transition:opacity 1s;" id="swiper-brands" init="false">
-                <swiper-slide v-for="(brand, index) in brands" :key="index">
-                    <div class="product">
-                        <img :data-src="['/images/brands/' + brand.img]" />
-                    </div>
-                </swiper-slide>
-            </swiper-container>
-        </div>
-    </main>
-</div>
+<partial name="_Brands"></partial>
