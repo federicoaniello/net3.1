@@ -2,5 +2,9 @@
   {
     "outputFile": "wwwroot/assets/bundles/css/page-index.css",
     "inputFile": "wwwroot/scss/index.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/Page/swiper.css",
+    "inputFile": "wwwroot/scss/Page/swiper.scss"
   }
 ]

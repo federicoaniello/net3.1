@@ -60,7 +60,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\assets\bundles\css\" />
     <Folder Include="wwwroot\assets\bundles\js\" />
   </ItemGroup>
 

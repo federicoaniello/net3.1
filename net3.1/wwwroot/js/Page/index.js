@@ -30,7 +30,16 @@ const { download, populate } = utilityFunction();
     /**
      * Inizializza Swiper.
      */
-    function initializeSwiper(){
+function initializeSwiper() {
+    const arrowPrev = document.createElement('div');
+    arrowPrev.classList.add('swiper-button-prev');
+    const arrowNext = document.createElement('div');
+    arrowNext.classList.add('swiper-button-next');
+    const arrowsArray = [arrowPrev, arrowNext];
+    brands_component.getElementsByTagName('div')[0].append(...arrowsArray);
+
+
+
 
         const swiperParams = {
         slidesPerView: 2,
@@ -43,6 +52,10 @@ const { download, populate } = utilityFunction();
         slidesPerView: 8,
     spaceBetween: 20
         }
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             }
 };
 
@@ -110,6 +123,7 @@ function utilityFunction() {
 * Crea le swiper-slide per l elemento swiper in base ai risultati dell'API, e li inserisce nello swiper-container.
 */
     function populate(arrayOfValues, container, swiperSlideClass, path) {
+        let divsContainer = [];
         const slide = document.createElement('swiper-slide');
         slide.setAttribute('lazy', "true");
         const slide_div = document.createElement('div');
@@ -121,9 +135,10 @@ function utilityFunction() {
         slide.append(slide_div);
         arrayOfValues.forEach(el => {
             const clonedNode = slide.cloneNode(true);
-            clonedNode.querySelector('img').setAttribute('src', `${path}${el.img}`);
-            container.append(clonedNode);
+            clonedNode.querySelector('img').src = `${path}${el.img}`;
+            divsContainer.push(clonedNode);
         })
+        container.append(...divsContainer);
     }
 
 

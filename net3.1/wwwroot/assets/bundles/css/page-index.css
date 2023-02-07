@@ -53,8 +53,20 @@
 #brands-component {
   background: grey;
 }
+#brands-component .swiper-button-next {
+  right: -15px;
+}
+#brands-component .swiper-button-prev {
+  left: -15px;
+}
 #brands-component .swiper-button-next, #brands-component .swiper-button-prev {
   color: black;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#brands-component .swiper-button-next::after, #brands-component .swiper-button-prev::after {
+  font-size: 22px;
+  font-weight: bold;
 }
 #brands-component .brand {
   height: auto;
@@ -122,6 +134,31 @@
   #spot-component section > div > p::after {
     display: none;
   }
+}
+
+#footer-page svg {
+  width: 20px;
+}
+#footer-page h3 {
+  font-size: 16px;
+}
+#footer-page .info p svg {
+  margin-right: 10px;
+}
+#footer-page .list {
+  list-style-type: none;
+  color: grey;
+}
+#footer-page .list > li {
+  transition: ease-in-out 0.2s;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+#footer-page .list > li:last-child {
+  margin-bottom: 0;
+}
+#footer-page .list > li:hover {
+  color: black;
 }
 
 a.navbar-brand {
