@@ -1,5 +1,6 @@
 ﻿using net3._1.Models;
 using System.Collections.Generic;
+using static net3._1.Models.Header;
 
 namespace net3._1.Services
 {
@@ -62,6 +63,32 @@ namespace net3._1.Services
                 ret.Add(new Brand($"brand-{(i.ToString().Length == 1 ? ("0" + i) : i.ToString())}.gif"));
             };
             return ret;
+        }
+
+
+        public Dictionary<string, TabValue[]> GetHeaderTabs()
+        {
+            Dictionary<string, TabValue[]> dict = new Dictionary<string, TabValue[]>
+            {
+                {"Arredo", new TabValue[] {
+                 new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona giorno","")  
+                }    },
+                {"Bagno", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona x","")
+                }    },
+                 {"Cucina", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona y","")
+                }    },
+                  {"Illuminazione", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona z","")
+                }    },
+                   {"Outdoor", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
+                }    }
+            };
+
+            return dict;
+
         }
     }
 

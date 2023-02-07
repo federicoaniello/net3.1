@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace net3._1.Models
 {
-    [Table("carouselfirst", Schema = "public")]
     public class CarouselFirst
     {
         public string Image { get; set; }
@@ -56,5 +56,28 @@ namespace net3._1.Models
         }
 
     }
+
+
+    public class Header
+    {
+        public Dictionary<string, TabValue[]> HeaderTabs { get; set; }
+
+
+        public class TabValue
+        {
+            public string Name { get; set; }
+            public string Link { get; set; }
+            public TabValue(string Name, string Link)
+            {
+                this.Name = Name;
+                this.Link = Link;
+            }
+
+            public TabValue()
+            {
+            }
+        }
+    }
+
 
 }
