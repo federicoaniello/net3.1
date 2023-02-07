@@ -1,11 +1,20 @@
 ﻿#brands-component {
-    background: grey;
+    background: #d7d7d7;
 
     .swiper-button-next {
         right: -15px;
+
+        @media(max-width:767px) {
+            right: 0;
+        }
     }
+
     .swiper-button-prev {
         left: -15px;
+
+        @media(max-width:767px) {
+            left: 0;
+        }
     }
 
     .swiper-button-next, .swiper-button-prev {
@@ -13,14 +22,24 @@
         top: 50%;
         transform: translateY(-50%);
 
+        @media(max-width:767px) {
+            height: calc(100% - 3rem);
+            background-color: #3e3e3e5e;
+            color: white;
+            width: 50px;
+        }
+
+
+
         &::after {
             font-size: 22px;
             font-weight: bold;
         }
     }
 
-
-    .brand {
+ 
+        
+        .brand {
         height: auto;
         background: white;
         align-items: center;

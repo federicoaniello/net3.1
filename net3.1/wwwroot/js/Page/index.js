@@ -125,11 +125,12 @@ function utilityFunction() {
     function populate(arrayOfValues, container, swiperSlideClass, path) {
         let divsContainer = [];
         const slide = document.createElement('swiper-slide');
+        slide.style.height = 'auto';
         slide.setAttribute('lazy', "true");
         const slide_div = document.createElement('div');
         slide_div.classList.add(swiperSlideClass, 'h-100');
         const img = document.createElement('img');
-        img.classList.add('w-100');
+        img.classList.add('w-100','p-2');
         img.loading = "lazy";
         slide_div.append(img);
         slide.append(slide_div);
