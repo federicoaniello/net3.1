@@ -71,7 +71,7 @@ namespace net3._1.Services
             Dictionary<string, TabValue[]> dict = new Dictionary<string, TabValue[]>
             {
                 {"Arredo", new TabValue[] {
-                 new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona giorno","")  
+                 new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona giorno","")
                 }    },
                 {"Bagno", new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona x","")
@@ -83,6 +83,33 @@ namespace net3._1.Services
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona z","")
                 }    },
                    {"Outdoor", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
+                }    },
+                      {"Ufficio", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
+                }    },
+                            {"Contract", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
+                }    },
+                                  {"Decor", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
+                }    },
+                                        {"Finiture", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
+                }    },
+                                              {"Edilizia", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
+                }    },
+                                                    {"Lifestyle", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
+                }    },
+                                                          {"Marchi", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
+                }    },
+                                                                {"Promo", new TabValue[] {
+                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
+                }    },
+                                                                      {"Outlet", new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
                 }    }
             };

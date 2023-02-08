@@ -35,6 +35,7 @@ namespace net3._1.Controllers
             var HomePage = new HomePageViewModel();
             HomePage.carousels = _carouselServices.GetCarouselList();
             HomePage.showCases = _carouselServices.GetShowCases();
+            HomePage.headerTabs= _carouselServices.GetHeaderTabs();
             return View(HomePage);
         }
 
