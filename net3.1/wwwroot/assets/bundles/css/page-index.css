@@ -258,6 +258,19 @@ body.mobile-menu .basket div:not(#hamburger-mobile-button) {
     margin: 0 10px;
   }
 }
+#archi-navbar nav.second .tab .tab-values {
+  display: none;
+}
+#archi-navbar nav.second .tab.show-tabs > div {
+  display: block;
+  position: absolute;
+  z-index: 50;
+  background: #fffaf4;
+  border-top: 2px solid red;
+  top: 32px;
+  min-width: 200px;
+  padding-top: 12px;
+}
 #archi-navbar nav > div, #archi-navbar nav > figure {
   flex: 1;
 }

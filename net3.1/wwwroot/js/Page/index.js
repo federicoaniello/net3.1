@@ -19,8 +19,14 @@ header_searchbar.addEventListener('input', function (e) {
     }
 })
 
-
-
+new ResizeObserver((entries) => {
+    entries.forEach(entry => {
+        const { width } = entry.contentRect;
+        if (width > 767) {
+            document.body.classList.remove("mobile-menu");
+        }
+    })
+}).observe(document.body);
 
 const  utilityFunction =() => {
 
@@ -155,6 +161,18 @@ function initializeSwiper() {
 
 
 
+header_tabs.querySelectorAll('.tab').forEach(tab => {
+    if (window.innerWidth > 767) {
+        tab.addEventListener('mouseenter', function (e) {
+            tab.classList.add('show-tabs')
+        }),
+            tab.addEventListener('mouseleave', function (e) {
+                tab.classList.remove('show-tabs')
+            })
+    }
+
+
+})
 
 
 
