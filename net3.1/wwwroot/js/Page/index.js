@@ -123,9 +123,12 @@ function initializeSwiper() {
     navigation: true,
     breakpoints: {
         768: {
-        slidesPerView: 8,
+        slidesPerView: 4,
     spaceBetween: 20
-        }
+        },
+        992: {
+            slidesPerView:8
+            }
             },
             navigation: {
                 nextEl: '.swiper-button-next',

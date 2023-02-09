@@ -58,7 +58,7 @@
   background: #d7d7d7;
 }
 #brands-component #container-brands {
-  min-height: 9vw;
+  min-height: calc(5vw + 40px);
 }
 #brands-component .swiper-button-next {
   right: -15px;
@@ -82,7 +82,8 @@
 }
 @media (max-width: 767px) {
   #brands-component .swiper-button-next, #brands-component .swiper-button-prev {
-    height: calc(100% - 3rem);
+    top: 22px;
+    height: 100%;
     background-color: rgba(62, 62, 62, 0.368627451);
     color: white;
     width: 50px;

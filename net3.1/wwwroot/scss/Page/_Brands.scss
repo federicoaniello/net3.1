@@ -2,7 +2,7 @@
     background: #d7d7d7;
 
     #container-brands {
-        min-height: calc(9vw);
+        min-height: calc(5vw + 40px);
     }
 
     .swiper-button-next {
@@ -23,11 +23,12 @@
 
     .swiper-button-next, .swiper-button-prev {
         color: black;
-        top: 50%;
+        top:50%;
         //transform: translateY(-50%);
 
         @media(max-width:767px) {
-            height: calc(100% - 3rem);
+            top: 22px;
+            height: 100%;
             background-color: #3e3e3e5e;
             color: white;
             width: 50px;
