@@ -1,8 +1,8 @@
 ﻿@using static net3._1.Models.Header;
-@model Dictionary<string,TabValue[]>   
+@model Dictionary<string,TabValue[]>
 
 <header id="archi-navbar" class="">
-    <nav class="container-fluid container-md d-flex align-items-center justify-content-between">
+    <nav class="first container-fluid container-md mt-md-2 mt-0 d-flex align-items-center justify-content-between">
                 <figure class="img-wrapper mb-0">
                     <img src="~/images/logo/logo-archiproducts.webp" alt="archiproducts Logo" />
                 </figure>
@@ -33,10 +33,9 @@
             <section>
             </section>
         </nav>
-    <nav class="container-fluid container-md selectors">
-        <div id="header-tabs" class="d-none d-md-inline-flex justify-content-between w-100 px-4 py-2">
-
-        @foreach (KeyValuePair<string,TabValue[]> value in Model)
+    <nav class="second container-fluid container-md selectors">
+        <div id="header-tabs" class="d-md-inline-flex justify-content-between w-100 px-0 px-md-4 py-2">
+            @foreach (KeyValuePair<string, TabValue[]> value in ViewBag.HeaderData)
         {
             <div class="tab" data-tabname="@(value.Key)">@(value.Key)</div>
 

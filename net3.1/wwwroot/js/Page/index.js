@@ -1,11 +1,13 @@
-﻿const brands_component = document.getElementById("brands-component");
+﻿const { createApp } = Vue;
+const brands_component = document.getElementById("brands-component");
 const brands_swiper_container = document.getElementById("swiper-brands-container");
 const header_searchbar = document.getElementById('header-searchbar');
 const mobile_hamburger_button = document.getElementById('hamburger-mobile-button');
 const header_tabs = document.getElementById('header-tabs');
-
+const archi_navbar = document.getElementById('archi-navbar');
 mobile_hamburger_button.onclick = () => {
-    header_tabs.classList.toggle('d-none');
+    archi_navbar.classList.toggle('mobile-menu');
+
 }
 header_searchbar.addEventListener('input', function (e) {
     console.log(e.target.value);
@@ -79,7 +81,7 @@ const { download, populate } = utilityFunction();
 const brandsCallback = (entries, observer) => {
 
     entries.forEach((entry) => {
-        console.log(entry)
+        console.log('ENTRY = ',entry)
         if (entry.isIntersecting) {
             console.log("INTERSECTED");
             download("/Brands/GetAllBrands").then(val => {
@@ -151,6 +153,23 @@ function initializeSwiper() {
 //    }
 //});
 
+
+
+
+
+
+createApp({
+    data() {
+        return {
+            count: 0
+        }
+    },
+    methods: {
+        increment() {
+            this.count++
+        }
+        }
+}).mount('#partial-products');
 
 
 

@@ -1,8 +1,5 @@
 ﻿@model HomePageViewModel
 
-@{
-    ViewData["Title"] = "Pagina di prova";
-}
 @section Scripts{
     <script type="module" src="~/js/Page/utilities.js"></script>
 
@@ -15,7 +12,6 @@
 <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
-<partial name="_Header" model="Model.headerTabs"></partial>
 <div class="container-md">
 
     <partial name="_CarouselFirst" model="Model.carousels"></partial>
@@ -24,6 +20,7 @@
         <p class="mb-0">Ecommerce di arredamento, illuminazione, bango cucina</p>
     </div>
     <partial name="_ShowCase" model="Model.showCases"></partial>
+    <partial name="_Products"></partial>
 </div>
 <partial name="_Brands"></partial>
 
@@ -31,6 +28,3 @@
     <partial name="_Spot"></partial>
 </div>
 <hr />
-<div class="container-md">
-    <partial name="_Footer"></partial>
-</div>

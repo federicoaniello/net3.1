@@ -1,9 +1,68 @@
 ﻿#archi-navbar {
     background-color: #fffaf4;
     border-bottom: 1px solid #ddd;
+    //this class applies only when I toggle the hamburger mobile button
+    &.mobile-menu {
+
+        > .first {
+            position: fixed;
+            z-index: 50;
+            background: white;
+        }
+
+        > .second {
+            opacity: 1;
+        }
+
+        #header-tabs {
+            .tab {
+                border-top: 1px solid #ddd;
+                padding: 10px 0;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-align: left;
+
+                &:last-child {
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+        }
+
+        #page--wrapper {
+            display: none;
+        }
+
+        .basket {
+            div:not(#hamburger-mobile-button) {
+                display: none !important;
+            }
+        }
+    }
+
+
+
 
     nav {
-        //height: 60px;
+        &.first {
+            @media(max-width:767px) {
+                padding: 0 0 0 10px;
+                height: 48px;
+            }
+        }
+
+        &.second {
+            @media(max-width:767px) {
+                position: fixed;
+                top: 48px;
+                left:0;
+                z-index: 50;
+                background: white;
+                width: 100%;
+                opacity: 0;
+                transition: transform .2s cubic-bezier(0.19, 0.26, 0.17, 0.99);
+                height: calc(100vh - 48px);
+            }
+        }
 
         > div, > figure {
             flex: 1;
@@ -14,7 +73,11 @@
             margin-left: 20px;
 
             @media (max-width:767px) {
-                margin-left: 0;
+                margin-left: 0 !important;
+                max-width: 150px;
+                margin-left: 20px;
+                padding: 10px 0;
+                width: 100%;
             }
         }
 
@@ -66,6 +129,12 @@
                     @media(max-width:767px) {
                         display: block;
                         margin: auto;
+                    }
+                }
+
+                @media (max-width:767px) {
+                    &:not(#hamburger-mobile-button) {
+                        width: 40px;
                     }
                 }
             }

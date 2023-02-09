@@ -1,5 +1,4 @@
 ﻿@using System.Globalization;
-@model List<Product>
 
 
 
@@ -7,10 +6,10 @@
 <main id="partial-products">
 <h3 class="text-center">Prodotti in vetrina</h3>
 <div class="swiper product--list">
+    {{count}}
+    <button v-on:click="increment">Increment</button>
 
-    <div class="products swiper-wrapper">
-        @foreach (Product prod in Model)
-        {
+@*    <div class="products swiper-wrapper">
             <div class="product swiper-slide">
                 <img src="/images/products/@(prod.Img)">
                 <div class="info text-center my-2">
@@ -20,8 +19,7 @@
                     <p class="fw-bold">€ @( prod.Price.ToString("N", CultureInfo.CurrentCulture) ?? "")</p>
                 </div>
             </div>
-        }
-</div>
+</div>*@
 
 </div>
 </main>

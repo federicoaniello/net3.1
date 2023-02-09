@@ -67,14 +67,11 @@ namespace net3._1.Models
         {
             public string Name { get; set; }
             public string Link { get; set; }
+
             public TabValue(string Name, string Link)
             {
                 this.Name = Name;
                 this.Link = Link;
-            }
-
-            public TabValue()
-            {
             }
         }
     }
