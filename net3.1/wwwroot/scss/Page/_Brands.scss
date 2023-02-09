@@ -1,6 +1,10 @@
 ﻿#brands-component {
     background: #d7d7d7;
 
+    #container-brands {
+        min-height: calc(9vw);
+    }
+
     .swiper-button-next {
         right: -15px;
 
@@ -37,9 +41,9 @@
         }
     }
 
- 
-        
-        .brand {
+
+
+    .brand {
         height: auto;
         background: white;
         align-items: center;
