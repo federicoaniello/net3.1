@@ -80,7 +80,11 @@ body.mobile-menu {
                 }
             }
 
+            #header-tabs{
+                height:30px;
+            } 
             .tab {
+
                 .tab-values {
                     display: none;
                 }
@@ -92,7 +96,7 @@ body.mobile-menu {
                         z-index: 50;
                         background: #fffaf4;
                         border-top: 2px solid red;
-                        top: 32px;
+                        top: 30px;
                         min-width: 200px;
                         padding-top: 12px;
                     }

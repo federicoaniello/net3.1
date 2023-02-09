@@ -258,6 +258,9 @@ body.mobile-menu .basket div:not(#hamburger-mobile-button) {
     margin: 0 10px;
   }
 }
+#archi-navbar nav.second #header-tabs {
+  height: 30px;
+}
 #archi-navbar nav.second .tab .tab-values {
   display: none;
 }
@@ -267,7 +270,7 @@ body.mobile-menu .basket div:not(#hamburger-mobile-button) {
   z-index: 50;
   background: #fffaf4;
   border-top: 2px solid red;
-  top: 32px;
+  top: 30px;
   min-width: 200px;
   padding-top: 12px;
 }
