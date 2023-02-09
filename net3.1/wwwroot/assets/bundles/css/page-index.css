@@ -9,6 +9,10 @@
 }
 #carouselFirst .carousel-inner img {
   width: 100%;
+  min-height: 20.8333333333rem;
+  margin: auto;
+  height: auto;
+  object-fit: contain;
 }
 #carouselFirst .carousel-indicators {
   position: relative;
@@ -122,6 +126,11 @@
   width: 60px;
 }
 
+.show-cases img {
+  min-height: 300px;
+  width: 100%;
+}
+
 #spot-component section > div {
   transition: all 0.2s;
 }
@@ -196,33 +205,27 @@
   color: black;
 }
 
-#archi-navbar {
-  background-color: #fffaf4;
-  border-bottom: 1px solid #ddd;
+body.mobile-menu #page--wrapper {
+  width: 100%;
+  position: fixed;
 }
-#archi-navbar.mobile-menu > .first {
+body.mobile-menu #archi-navbar .first {
   position: fixed;
   z-index: 50;
   background: white;
 }
-#archi-navbar.mobile-menu > .second {
-  opacity: 1;
+body.mobile-menu #archi-navbar .second {
+  z-index: 50;
+  transform: translateX(100vw);
+  overflow-y: scroll;
 }
-#archi-navbar.mobile-menu #header-tabs .tab {
-  border-top: 1px solid #ddd;
-  padding: 10px 0;
-  text-transform: uppercase;
-  font-weight: 700;
-  text-align: left;
-}
-#archi-navbar.mobile-menu #header-tabs .tab:last-child {
-  border-bottom: 1px solid #ddd;
-}
-#archi-navbar.mobile-menu #page--wrapper {
-  display: none;
-}
-#archi-navbar.mobile-menu .basket div:not(#hamburger-mobile-button) {
+body.mobile-menu .basket div:not(#hamburger-mobile-button) {
   display: none !important;
+}
+
+#archi-navbar {
+  background-color: #fffaf4;
+  border-bottom: 1px solid #ddd;
 }
 @media (max-width: 767px) {
   #archi-navbar nav.first {
@@ -234,13 +237,25 @@
   #archi-navbar nav.second {
     position: fixed;
     top: 48px;
-    left: 0;
-    z-index: 50;
     background: white;
     width: 100%;
-    opacity: 0;
-    transition: transform 0.2s cubic-bezier(0.19, 0.26, 0.17, 0.99);
+    transition: all 0.2s cubic-bezier(0.19, 0.26, 0.17, 0.99);
     height: calc(100vh - 48px);
+    left: -100vw;
+  }
+  #archi-navbar nav.second #header-tabs .tab {
+    border-top: 1px solid #ddd;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: left;
+  }
+  #archi-navbar nav.second #header-tabs .tab:last-child {
+    border-bottom: 1px solid #ddd;
+  }
+  #archi-navbar nav.second #header-tabs .tab svg {
+    width: 30px;
+    margin: 0 10px;
   }
 }
 #archi-navbar nav > div, #archi-navbar nav > figure {

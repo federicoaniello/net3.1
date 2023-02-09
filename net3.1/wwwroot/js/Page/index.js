@@ -6,7 +6,7 @@ const mobile_hamburger_button = document.getElementById('hamburger-mobile-button
 const header_tabs = document.getElementById('header-tabs');
 const archi_navbar = document.getElementById('archi-navbar');
 mobile_hamburger_button.onclick = () => {
-    archi_navbar.classList.toggle('mobile-menu');
+    document.body.classList.toggle('mobile-menu');
 
 }
 header_searchbar.addEventListener('input', function (e) {

@@ -11,11 +11,13 @@
 </head>
 <body>
     <partial name="_Header" model="ViewBag.HeaderData"></partial>
-
     <div class="">
-        <main role="main" class="pb-3" id="page--wrapper">
+        <main role="main" class="pb-3 pt-1 pt-md-0" id="page--wrapper">
             @RenderBody()
         </main>
+        <div class="container-md">
+            <partial name="_Footer"></partial>
+        </div>
     </div>
 
  @*   <footer class="border-top footer text-muted">
@@ -23,9 +25,7 @@
             &copy; 2023 - net3._1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>*@
-    <div class="container-md">
-    <partial name="_Footer"></partial>
-</div>
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/vue/dist/js/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
