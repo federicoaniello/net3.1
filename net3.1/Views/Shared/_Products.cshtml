@@ -1,7 +1,7 @@
 ﻿
-    <main id="partial-products" ref="partials">
+<main ref="partials" id="partial-products">
         <h3 class="text-center">Prodotti in vetrina</h3>
-            <swiper-container ref="swiper" class="products">
+            <swiper-container ref="swiper" class="products" init="false">
                     <swiper-slide v-for="(prod,index) of products" class="product">
                         <img :src="['/images/products/' + prod.img]">
                         <div class="info text-center my-2">

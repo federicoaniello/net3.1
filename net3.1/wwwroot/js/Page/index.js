@@ -171,6 +171,7 @@ header_tabs.querySelectorAll('.tab').forEach(tab => {
 createApp({
     setup() {
         const partials = ref(null);
+        const swiper = ref(null);
         const products = ref([]);
             const swiperConf = {
                 slidesPerView: 1.5,
@@ -197,6 +198,9 @@ createApp({
         onMounted(() => {
             download("/Products/GetAllProducts").then(prds => {
                 products.value = prds;
+                Object.assign(swiper.value, swiperConf);
+                console.log(partials.value)
+                swiper.value.initialize();
                 const callback = (entries) => {
                     entries.forEach(({ target, isIntersecting }) => {
                         console.log(target,isIntersecting)
@@ -212,7 +216,8 @@ createApp({
 
         return {
             products,
-            partials
+            partials,
+            swiper
 
         }
         }
