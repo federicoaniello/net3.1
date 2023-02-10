@@ -1,27 +1,16 @@
-﻿@using System.Globalization;
-
-
-
-
-<main id="partial-products">
-<h3 class="text-center">Prodotti in vetrina</h3>
-<div class="swiper product--list">
-    {{count}}
-    <button v-on:click="increment">Increment</button>
-
-@*    <div class="products swiper-wrapper">
-            <div class="product swiper-slide">
-                <img src="/images/products/@(prod.Img)">
-                <div class="info text-center my-2">
-                    <h6>@prod.Name</h6>
-                    <h5 class="fw-bold">@prod.Category</h5>
-                    <h5>@(prod.Description)</h5>
-                    <p class="fw-bold">€ @( prod.Price.ToString("N", CultureInfo.CurrentCulture) ?? "")</p>
-                </div>
-            </div>
-</div>*@
-
-</div>
-</main>
-
+﻿
+    <main id="partial-products" ref="partials">
+        <h3 class="text-center">Prodotti in vetrina</h3>
+            <swiper-container ref="swiper" class="products">
+                    <swiper-slide v-for="(prod,index) of products" class="product">
+                        <img :src="['/images/products/' + prod.img]">
+                        <div class="info text-center my-2">
+                            <h6>{{ prod.name }}</h6>
+                            <h5 class="fw-bold">{{ prod.category }}</h5>
+                            <h5>{{ prod.description }}</h5>
+                            <p class="fw-bold">€ {{ prod.price }}</p>
+                        </div>
+                    </swiper-slide>
+        </swiper-container>
+        </main>
 

@@ -1,4 +1,5 @@
-﻿const { createApp } = Vue;
+﻿const { createApp, ref, onMounted } = Vue;
+
 const brands_component = document.getElementById("brands-component");
 const brands_swiper_container = document.getElementById("swiper-brands-container");
 const header_searchbar = document.getElementById('header-searchbar');
@@ -148,19 +149,7 @@ function initializeSwiper() {
     brands_component_observer.observe(brands_component);
 
 
-//var swiper = new Swiper(".product--list", {
-//    slidesPerView: 1.5,
-//    centeredSlides:true,
-//    spaceBetween: 10,
-//    navigation: true,
-//    breakpoints: {
-//        768: {
-//            centeredSlides: false,
-//            slidesPerView: 4,
-//            spaceBetween: 20
-//        }
-//    }
-//});
+
 
 
 
@@ -180,27 +169,56 @@ header_tabs.querySelectorAll('.tab').forEach(tab => {
 
 
 createApp({
-    data() {
+    setup() {
+        const partials = ref(null);
+        const products = ref([]);
+            const swiperConf = {
+                slidesPerView: 1.5,
+                centeredSlides: true,
+                spaceBetween: 10,
+                navigation: true,
+                breakpoints: {
+                    768: {
+                        centeredSlides: false,
+                        slidesPerView: 4,
+                        spaceBetween: 20
+                    }
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            }
+
+
+
+
+
+        onMounted(() => {
+            download("/Products/GetAllProducts").then(prds => {
+                products.value = prds;
+                const callback = (entries) => {
+                    entries.forEach(({ target, isIntersecting }) => {
+                        console.log(target,isIntersecting)
+                    });
+        };
+                const obs = new IntersectionObserver(callback, {
+                    root: null,
+                    threshold: 0.1,
+                });
+                obs.observe(partials.value);
+            });
+        })
+
         return {
-            count: 0
-        }
-    },
-    methods: {
-        increment() {
-            this.count++
+            products,
+            partials
+
         }
         }
+
+
 }).mount('#partial-products');
-
-
-
-
-
-
-
-
-
-
 
 
 
