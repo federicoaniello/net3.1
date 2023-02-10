@@ -58,11 +58,6 @@ namespace net3._1.Models
     }
 
 
-    public class Header
-    {
-        public Dictionary<string, TabValue[]> HeaderTabs { get; set; }
-
-
         public class TabValue
         {
             public string Name { get; set; }
@@ -73,6 +68,26 @@ namespace net3._1.Models
                 this.Name = Name;
                 this.Link = Link;
             }
+        }
+
+
+    public class TabKey
+    {
+        public string Name { get; set; }
+        public string Link { get; set; } = null;
+
+        public bool IsRed { get; set; }
+
+        public TabKey(string Name, string Link, bool IsRed = false)
+        {
+            this.Name = Name;
+            this.Link = Link;
+            this.IsRed = IsRed;
+        }
+        public TabKey(string Name, bool IsRed = false)
+        {
+            this.Name = Name;
+            this.IsRed = IsRed;
         }
     }
 

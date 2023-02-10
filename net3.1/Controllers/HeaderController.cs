@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using net3._1.Models;
 using net3._1.Services;
 using System.Collections.Generic;
 
@@ -14,7 +15,7 @@ namespace net3._1.Controllers
         }
 
         // GET: Header/GetAllHeaderTabs
-        public ActionResult<Dictionary<string, Models.Header.TabValue[]>> GetAllHeaderTabs()
+        public ActionResult<Dictionary<TabKey, TabValue[]>> GetAllHeaderTabs()
         {
             return _backend.GetHeaderTabs();
         }

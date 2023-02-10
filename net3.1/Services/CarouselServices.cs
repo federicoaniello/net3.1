@@ -1,6 +1,5 @@
 ﻿using net3._1.Models;
 using System.Collections.Generic;
-using static net3._1.Models.Header;
 
 namespace net3._1.Services
 {
@@ -66,50 +65,57 @@ namespace net3._1.Services
         }
 
 
-        public Dictionary<string, TabValue[]> GetHeaderTabs()
+        public Dictionary<TabKey, TabValue[]> GetHeaderTabs()
         {
-            Dictionary<string, TabValue[]> dict = new Dictionary<string, TabValue[]>
+            Dictionary<TabKey, TabValue[]> dict = new Dictionary<TabKey, TabValue[]>
             {
-                {"Arredo", new TabValue[] {
+                {new TabKey("Arredo"), new TabValue[] {
                  new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona giorno","")
-                }    },
-                {"Bagno", new TabValue[] {
+                }    }, 
+
+                {new TabKey("Bagno"), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona x","")
                 }    },
-                 {"Cucina", new TabValue[] {
+
+                 {new TabKey("Cucina"), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona y","")
                 }    },
-                  {"Illuminazione", new TabValue[] {
+
+                  {new TabKey("Illuminazione"), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona z","")
                 }    },
-                   {"Outdoor", new TabValue[] {
+
+                   {new TabKey("Outdoor"), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
                 }    },
-                      {"Ufficio", new TabValue[] {
+
+
+                  {new TabKey("Ufficio"), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
                 }    },
-                            {"Contract", new TabValue[] {
+
+                            {new TabKey("Contract"), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
                 }    },
-                                  {"Decor", new TabValue[] {
+                                  {new TabKey("Decor"), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
                 }    },
-                                        {"Finiture", new TabValue[] {
+                                        {new TabKey("Finiture"), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
                 }    },
-                                              {"Edilizia", new TabValue[] {
+                                              {new TabKey("Edilizia"), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
                 }    },
-                                                    {"Lifestyle", new TabValue[] {
+                                                    {new TabKey("Lifestyle"), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
                 }    },
-                                                          {"Marchi", new TabValue[] {
+                                                          {new TabKey("Marchi","https://www.google.it"), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
                 }    },
-                                                                {"Promo", new TabValue[] {
+                                                                {new TabKey("Promo",true), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
                 }    },
-                                                                      {"Outlet", new TabValue[] {
+                                                                      {new TabKey("Outlet","https://www.google.it",true), new TabValue[] {
                   new TabValue("Divani e poltrone","Link"),new TabValue("Tavoli e sedie","Link"), new TabValue("Zona t","")
                 }    }
             };

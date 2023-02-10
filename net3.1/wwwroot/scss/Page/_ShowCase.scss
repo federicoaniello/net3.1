@@ -18,6 +18,6 @@
 }
 
 .show-cases img {
-    min-height: 300px;
+    min-height: calc(200px + 3vw);
     width: 100%;
 }
