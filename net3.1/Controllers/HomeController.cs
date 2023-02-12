@@ -7,18 +7,21 @@ using System.Diagnostics;
 
 namespace net3._1.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
         private readonly CarouselServices _carouselServices;
         private readonly net3_1Context _context;
 
-        public HomeController(ILogger<HomeController> logger, CarouselServices carouselServices, net3_1Context context)
+        public HomeController(ILogger<HomeController> logger, CarouselServices carouselServices, net3_1Context context) :base(carouselServices)
         {
             _logger = logger;
             _carouselServices = carouselServices;
             _context = context;
         }
+
+
+     
 
         public ActionResult Index()
         {
@@ -36,7 +39,7 @@ namespace net3._1.Controllers
             HomePage.carousels = _carouselServices.GetCarouselList();
             HomePage.showCases = _carouselServices.GetShowCases();
             
-             ViewBag.HeaderData = _carouselServices.GetHeaderTabs();
+             
             
             return View(HomePage);
         }

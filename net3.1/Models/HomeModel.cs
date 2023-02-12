@@ -74,7 +74,7 @@ namespace net3._1.Models
     public class TabKey
     {
         public string Name { get; set; }
-        public string Link { get; set; } = null;
+        public string Link { get; set; }
 
         public bool IsRed { get; set; }
 
