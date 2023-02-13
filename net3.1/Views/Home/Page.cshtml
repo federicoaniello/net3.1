@@ -1,10 +1,7 @@
 ﻿@model HomePageViewModel
 
 @section Scripts{
-
-    <script>
-
-    </script>
+    <script src="@Url.Content("~/bundle/test.js")"></script>
     }
 
 <link rel="stylesheet"
@@ -26,3 +23,8 @@
     <partial name="_Spot"></partial>
 </div>
 <hr />
+
+
+<div id="test--component">
+    <test-component></test-component>
+</div>

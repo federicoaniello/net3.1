@@ -1,4 +1,4 @@
-﻿import utilityFunction from "/js/Page/utilities.js";
+﻿import utilityFunction from "./utilities.js";
 
 const { createApp, ref, onMounted, computed } = Vue;
 const { download, populate } = utilityFunction();
