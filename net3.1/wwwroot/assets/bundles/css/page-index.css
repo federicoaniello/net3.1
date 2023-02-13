@@ -80,39 +80,6 @@
 #brands-component #container-brands {
   min-height: calc(5vw + 40px);
 }
-#brands-component .swiper-button-next {
-  right: -15px;
-}
-@media (max-width: 767px) {
-  #brands-component .swiper-button-next {
-    right: 0;
-  }
-}
-#brands-component .swiper-button-prev {
-  left: -15px;
-}
-@media (max-width: 767px) {
-  #brands-component .swiper-button-prev {
-    left: 0;
-  }
-}
-#brands-component .swiper-button-next, #brands-component .swiper-button-prev {
-  color: black;
-  top: 50%;
-}
-@media (max-width: 767px) {
-  #brands-component .swiper-button-next, #brands-component .swiper-button-prev {
-    top: 22px;
-    height: 100%;
-    background-color: rgba(62, 62, 62, 0.368627451);
-    color: white;
-    width: 50px;
-  }
-}
-#brands-component .swiper-button-next::after, #brands-component .swiper-button-prev::after {
-  font-size: 22px;
-  font-weight: bold;
-}
 #brands-component .brand {
   height: auto;
   background: white;
@@ -379,6 +346,46 @@ body.mobile-menu .basket div:not(#hamburger-mobile-button) {
   text-align: center;
   font-weight: 600;
   cursor: pointer;
+}
+
+.header-highlighted {
+  color: red;
+}
+
+[class*=swiper-button-next] {
+  right: -15px !important;
+}
+@media (max-width: 767px) {
+  [class*=swiper-button-next] {
+    right: 0 !important;
+  }
+}
+
+[class*=swiper-button-prev] {
+  left: -15px !important;
+}
+@media (max-width: 767px) {
+  [class*=swiper-button-prev] {
+    left: 0 !important;
+  }
+}
+
+[class*=swiper-button] {
+  color: black !important;
+  top: 50% !important;
+}
+@media (max-width: 767px) {
+  [class*=swiper-button] {
+    top: 22px !important;
+    height: 100% !important;
+    background-color: rgba(62, 62, 62, 0.368627451) !important;
+    color: white !important;
+    width: 50px !important;
+  }
+}
+[class*=swiper-button]::after {
+  font-size: 22px !important;
+  font-weight: bold !important;
 }
 
 a.navbar-brand {

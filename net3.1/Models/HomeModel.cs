@@ -76,18 +76,20 @@ namespace net3._1.Models
         public string Name { get; set; }
         public string Link { get; set; }
 
-        public bool IsRed { get; set; }
+        public bool IsHighlighted { get; set; }
 
-        public TabKey(string Name, string Link, bool IsRed = false)
+
+
+        public TabKey(string Name, string Link, bool IsHighlighted = false)
         {
             this.Name = Name;
             this.Link = Link;
-            this.IsRed = IsRed;
+            this.IsHighlighted = IsHighlighted;
         }
-        public TabKey(string Name, bool IsRed = false)
+        public TabKey(string Name, bool IsHighlighted = false)
         {
             this.Name = Name;
-            this.IsRed = IsRed;
+            this.IsHighlighted = IsHighlighted;
         }
     }
 

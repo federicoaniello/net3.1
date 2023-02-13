@@ -1,4 +1,4 @@
-﻿const { createApp, ref, onMounted } = Vue;
+﻿const { createApp, ref, onMounted, computed } = Vue;
 
 const brands_component = document.getElementById("brands-component");
 const brands_swiper_container = document.getElementById("swiper-brands-container");
@@ -170,61 +170,75 @@ header_tabs.querySelectorAll('.tab').forEach(tab => {
 
 createApp({
     setup() {
-        const partials = ref(null);
-        const swiper = ref(null);
+        const swiperpartials = ref(null);
+        const swiperm = ref(null);
         const products = ref([]);
-            const swiperConf = {
-                slidesPerView: 1.5,
-                centeredSlides: true,
-                spaceBetween: 10,
-                navigation: true,
-                breakpoints: {
-                    768: {
-                        centeredSlides: false,
-                        slidesPerView: 4,
-                        spaceBetween: 20
-                    }
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+        const formattedPrice = computed(() => param => {
+            const formatter = new Intl.NumberFormat('it-IT', {
+                style: 'decimal',
+                currency: 'EUR',
+                minimumFractionDigits: 2
+            });
+            return formatter.format(param)
+        })
+
+        const swiperConf = {
+            slidesPerView: 1.5,
+            centeredSlides: true,
+            spaceBetween: 10,
+            navigation: true,
+            breakpoints: {
+                768: {
+                    centeredSlides: false,
+                    slidesPerView: 4,
+                    spaceBetween: 20
                 }
+            },
+            navigation: {
+                nextEl: '.swiper-button-next .product--item',
+                prevEl: '.swiper-button-prev .product--item',
             }
+        }
 
 
 
 
 
         onMounted(() => {
-            download("/Products/GetAllProducts").then(prds => {
-                products.value = prds;
-                Object.assign(swiper.value, swiperConf);
-                console.log(partials.value)
-                swiper.value.initialize();
-                const callback = (entries) => {
-                    entries.forEach(({ target, isIntersecting }) => {
-                        console.log(target,isIntersecting)
-                    });
-        };
-                const obs = new IntersectionObserver(callback, {
-                    root: null,
-                    threshold: 0.1,
+            const callback = (entries, observer) => {
+                entries.forEach(({ target, isIntersecting }) => {
+                    console.log(target, isIntersecting)
+                    if (isIntersecting) {
+                        download("/Products/GetAllProducts").then(prds => {
+                            products.value = prds;
+                            Object.assign(swiperm.value, swiperConf);
+                            swiperm.value.initialize();
+                            observer.unobserve(target);
+                        });
+                    }
                 });
-                obs.observe(partials.value);
+            };
+            const obs = new IntersectionObserver(callback, {
+                root: null,
+                threshold: 0.1,
             });
+            obs.observe(swiperpartials.value);
+
+
+
+
         })
 
         return {
             products,
-            partials,
-            swiper
+            swiperpartials,
+            swiperm,
+            formattedPrice
 
         }
-        }
-
+    }
 
 }).mount('#partial-products');
-
 
 
 

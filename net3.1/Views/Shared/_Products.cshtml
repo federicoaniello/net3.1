@@ -1,16 +1,20 @@
 ﻿
-<main ref="partials" id="partial-products">
+<main id="partial-products" class="position-relative">
+    <section ref="swiperpartials">
         <h3 class="text-center">Prodotti in vetrina</h3>
-            <swiper-container ref="swiper" class="products" init="false">
+            <swiper-container ref="swiperm" class="products" init="false">
                     <swiper-slide v-for="(prod,index) of products" class="product">
                         <img :src="['/images/products/' + prod.img]">
                         <div class="info text-center my-2">
                             <h6>{{ prod.name }}</h6>
                             <h5 class="fw-bold">{{ prod.category }}</h5>
                             <h5>{{ prod.description }}</h5>
-                            <p class="fw-bold">€ {{ prod.price }}</p>
+                <p class="fw-bold">€ {{ formattedPrice(prod.price) }}</p>
                         </div>
                     </swiper-slide>
         </swiper-container>
+    </section>
+    <div class="product--item swiper-button-prev"></div>
+    <div class="product--item swiper-button-next"></div>
         </main>
 

@@ -2,7 +2,7 @@
   {
     "outputFileName": "wwwroot/assets/bundles/js/index.js",
     "inputFiles": [
-      "wwwroot/js/site.js"
+      "wwwroot/js/Page/index.js"
     ],
     "minify": {
       "enabled": true,

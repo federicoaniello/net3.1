@@ -13,7 +13,7 @@ namespace net3._1.Controllers
     public class BaseController : Controller
     {
 
-        private readonly CarouselServices carouselServices;
+        protected readonly CarouselServices carouselServices;
 
         protected BaseController(CarouselServices carouselServices)
         {
