@@ -5,7 +5,20 @@
         min-height: calc(5vw + 40px);
     }
 
-  
+
+    @media(max-width:767px) {
+        &:hover {
+            .swiper-button-prev, .swiper-button-next {
+                opacity: 1;
+            }
+        }
+
+        .swiper-button-prev, .swiper-button-next {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+    }
+
 
 
 
@@ -16,6 +29,12 @@
         display: flex;
         transition: all ease-in-out 0.2s;
         opacity: 1;
+
+        @media (max-width:767px) {
+            max-height: 190px;
+            margin: 0 auto;
+            max-width: 190px;
+        }
 
         & > img {
             object-fit: contain;

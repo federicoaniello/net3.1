@@ -1,9 +1,4 @@
-﻿.header-highlighted{
-    color: red;
-}
-
-
-[class*="swiper-button-next"] {
+﻿[class*="swiper-button-next"] {
     right: -15px !important;
 
     @media(max-width:767px) {
@@ -22,6 +17,7 @@
 [class*="swiper-button"] {
     color: black !important;
     top: 50% !important;
+    //transform: translateY(-50%);
 
     @media(max-width:767px) {
         top: 22px !important;
@@ -30,6 +26,9 @@
         color: white !important;
         width: 50px !important;
     }
+
+
+
     &::after {
         font-size: 22px !important;
         font-weight: bold !important;

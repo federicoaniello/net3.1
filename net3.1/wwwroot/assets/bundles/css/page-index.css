@@ -52,21 +52,38 @@
   border: 1px solid red;
 }
 
-#partial-products .product > img {
+#partial-products section {
+  min-height: 370px;
+}
+@media (max-width: 767px) {
+  #partial-products section:hover .product--item.swiper-button-prev, #partial-products section:hover .product--item.swiper-button-next {
+    opacity: 1;
+  }
+  #partial-products section .product--item.swiper-button-prev, #partial-products section .product--item.swiper-button-next {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+}
+#partial-products section .product {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+#partial-products section .product > img {
   object-fit: contain;
   width: 100%;
   transition: all ease-in-out 0.2s;
+  min-height: 240px;
 }
 @media (max-width: 767px) {
-  #partial-products .product > img {
+  #partial-products section .product > img {
     max-height: 400px;
   }
 }
-#partial-products .product > img:hover {
+#partial-products section .product > img:hover {
   transform: scale(105%);
 }
 @media (max-width: 767px) {
-  #partial-products .product > img:hover {
+  #partial-products section .product > img:hover {
     transform: scale(102%);
   }
 }
@@ -80,6 +97,15 @@
 #brands-component #container-brands {
   min-height: calc(5vw + 40px);
 }
+@media (max-width: 767px) {
+  #brands-component:hover .swiper-button-prev, #brands-component:hover .swiper-button-next {
+    opacity: 1;
+  }
+  #brands-component .swiper-button-prev, #brands-component .swiper-button-next {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+}
 #brands-component .brand {
   height: auto;
   background: white;
@@ -87,6 +113,13 @@
   display: flex;
   transition: all ease-in-out 0.2s;
   opacity: 1;
+}
+@media (max-width: 767px) {
+  #brands-component .brand {
+    max-height: 190px;
+    margin: 0 auto;
+    max-width: 190px;
+  }
 }
 #brands-component .brand > img {
   object-fit: contain;
@@ -350,6 +383,42 @@ body.mobile-menu .basket div:not(#hamburger-mobile-button) {
 
 .header-highlighted {
   color: red;
+}
+
+[class*=swiper-button-next] {
+  right: -15px !important;
+}
+@media (max-width: 767px) {
+  [class*=swiper-button-next] {
+    right: 0 !important;
+  }
+}
+
+[class*=swiper-button-prev] {
+  left: -15px !important;
+}
+@media (max-width: 767px) {
+  [class*=swiper-button-prev] {
+    left: 0 !important;
+  }
+}
+
+[class*=swiper-button] {
+  color: black !important;
+  top: 50% !important;
+}
+@media (max-width: 767px) {
+  [class*=swiper-button] {
+    top: 22px !important;
+    height: 100% !important;
+    background-color: rgba(62, 62, 62, 0.368627451) !important;
+    color: white !important;
+    width: 50px !important;
+  }
+}
+[class*=swiper-button]::after {
+  font-size: 22px !important;
+  font-weight: bold !important;
 }
 
 [class*=swiper-button-next] {

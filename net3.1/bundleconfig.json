@@ -7,7 +7,16 @@
     "minify": {
       "enabled": true,
       "renameLocals": true
-    },
-    "sourceMap": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/assets/bundles/js/utilities.js",
+    "inputFiles": [
+      "wwwroot/js/Page/utilities.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
   }
 ]
