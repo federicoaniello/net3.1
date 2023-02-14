@@ -3,12 +3,13 @@ const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const TerserPlugin = require("terser-webpack-plugin");
 const config = {
-    mode:"development",
-    entry: './wwwroot/js/Page/index.js',
+    mode:"production",
+    entry: ["/Components/Products/index.js"],
     output: {
         path: path.resolve(__dirname, 'wwwroot/assets/bundles/js'),
-        filename: 'index.js'
+        filename: 'products-app.js'
     },
+    
     module: {
         rules: [
             {
@@ -37,15 +38,18 @@ const config = {
         ]
     },
     plugins: [
-        new VueLoaderPlugin()
-    ]
-};
+        new VueLoaderPlugin({
+                compilerOptions: {
+                    // treat all tags with a dash as custom elements
+                    isCustomElement: (tag) => tag.includes('-')
+                }
+            }),
 
-module.exports = {
+    ],
     optimization: {
         minimize: true,
         minimizer: [new TerserPlugin()],
-    },
+    }
 };
 
 module.exports = config;

@@ -1,6 +1,5 @@
 ﻿import utilityFunction from "./utilities.js";
 
-const { createApp, ref, onMounted, computed } = Vue;
 const { download, populate } = utilityFunction();
 const brands_component = document.getElementById("brands-component");
 const brands_swiper_container = document.getElementById("swiper-brands-container");
@@ -121,76 +120,6 @@ header_tabs.querySelectorAll('.tab').forEach(tab => {
 
 
 
-createApp({
-    setup() {
-        const swiperpartials = ref(null);
-        const swiperm = ref(null);
-        const products = ref([]);
-        const formattedPrice = computed(() => param => {
-            const formatter = new Intl.NumberFormat('it-IT', {
-                style: 'decimal',
-                currency: 'EUR',
-                minimumFractionDigits: 2
-            });
-            return formatter.format(param)
-        })
-
-        const swiperConf = {
-            slidesPerView: 1.5,
-            centeredSlides: true,
-            spaceBetween: 10,
-            navigation: true,
-            breakpoints: {
-                768: {
-                    centeredSlides: false,
-                    slidesPerView: 4,
-                    spaceBetween: 20
-                }
-            },
-            navigation: {
-                nextEl: '.swiper-button-next .product--item',
-                prevEl: '.swiper-button-prev .product--item',
-            }
-        }
-
-
-
-
-
-        onMounted(() => {
-            const callback = (entries, observer) => {
-                entries.forEach(({ target, isIntersecting }) => {
-                    if (isIntersecting) {
-                        download("/Products/GetAllProducts").then(prds => {
-                            products.value = prds;
-                            Object.assign(swiperm.value, swiperConf);
-                            swiperm.value.initialize();
-                            observer.unobserve(target);
-                        });
-                    }
-                });
-            };
-            const obs = new IntersectionObserver(callback, {
-                root: null,
-                threshold: 0.1,
-            });
-            obs.observe(swiperpartials.value);
-
-
-
-
-        })
-
-        return {
-            products,
-            swiperpartials,
-            swiperm,
-            formattedPrice
-
-        }
-    }
-
-}).mount('#partial-products');
 
 
 

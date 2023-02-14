@@ -67,8 +67,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="assets\bundles\js\" />
-    <Folder Include="VueComponents\Test\" />
     <Folder Include="wwwroot\assets\bundles\js\" />
   </ItemGroup>
 

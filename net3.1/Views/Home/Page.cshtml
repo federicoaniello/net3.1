@@ -1,7 +1,11 @@
 ﻿@model HomePageViewModel
 
 @section Scripts{
-    <script src="@Url.Content("~/bundle/test.js")"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script type="module" src="~/assets/bundles/js/index.js" asp-append-version="true"></script>
+    <script src="~/assets/bundles/js/products-app.js" asp-append-version="true"></script>
+
     }
 
 <link rel="stylesheet"
@@ -16,7 +20,8 @@
     </div>
     <partial name="_ShowCase" model="Model.showCases"></partial>
 </div>
-<partial name="_Products"></partial>
+@*<partial name="_Products"></partial>*@
+<div id="products--vue"></div>
 <partial name="_Brands"></partial>
 
 <div class="container-md">
