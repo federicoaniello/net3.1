@@ -7,13 +7,13 @@ using System.Diagnostics;
 
 namespace net3._1.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : BaseController<HomeController>
     {
         private readonly ILogger<HomeController> _logger;
         private readonly CarouselServices _carouselServices;
         private readonly net3_1Context _context;
 
-        public HomeController(ILogger<HomeController> logger, CarouselServices carouselServices, net3_1Context context) :base(carouselServices)
+        public HomeController(ILogger<HomeController> logger, CarouselServices carouselServices, net3_1Context context)
         {
             _logger = logger;
             _carouselServices = carouselServices;
@@ -23,24 +23,26 @@ namespace net3._1.Controllers
 
      
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public ViewResult Privacy()
         {
             return View();
         }
-        public IActionResult Page()
+        public ViewResult Page()
         {
 
-            var HomePage = new HomePageViewModel();
-            HomePage.carousels = _carouselServices.GetCarouselList();
-            HomePage.showCases = _carouselServices.GetShowCases();
-            
-             
-            
+            var HomePage = new HomePageViewModel
+            {
+                carousels = _carouselServices.GetCarouselList(),
+                showCases = _carouselServices.GetShowCases()
+            };
+
+
+
             return View(HomePage);
         }
 

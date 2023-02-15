@@ -23,6 +23,7 @@ namespace net3._1
         {
             services.AddSingleton<CarouselServices>();
             services.AddControllersWithViews();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
 
             services.AddDbContext<net3_1Context>(options =>
                    options.UseNpgsql(Configuration.GetConnectionString("net3_1Context")));
@@ -52,7 +53,7 @@ namespace net3._1
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Page}/{id?}");
             });
         }
     }

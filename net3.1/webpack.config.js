@@ -3,6 +3,7 @@ const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const TerserPlugin = require("terser-webpack-plugin");
 const config = {
+    watch: true,
     mode:"production",
     entry: ["/Components/Products/index.js"],
     output: {

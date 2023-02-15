@@ -117,13 +117,3 @@ header_tabs.querySelectorAll('.tab').forEach(tab => {
 
 
 })
-
-
-
-
-
-
-
-
-
-

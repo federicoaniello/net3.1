@@ -16,13 +16,11 @@ namespace net3._1.Controllers
             _backend = backend;
         }
 
-        public ActionResult<List<Product>> GetAllProducts()
+        public JsonResult GetAllProducts()
         {
             var lst = _backend.GetProducts();
 
-            if (lst == null) return NotFound();
-
-            return lst;
+            return Json(lst);
         }
     }
 }
