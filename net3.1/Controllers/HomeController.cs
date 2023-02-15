@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace net3._1.Controllers
 {
-    public class HomeController : BaseController<HomeController>
+    public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly CarouselServices _carouselServices;

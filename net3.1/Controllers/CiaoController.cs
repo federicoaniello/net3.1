@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace net3._1.Controllers
 {
-    public class CiaoController : BaseController<CiaoController>
+    public class CiaoController : Controller
     {
         public IActionResult Index()
         {
