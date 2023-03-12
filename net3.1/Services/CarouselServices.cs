@@ -1,22 +1,30 @@
-﻿using net3._1.Models;
+﻿using net3._1.Data;
+using net3._1.Models;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 
 namespace net3._1.Services
 {
     public class CarouselServices
     {
+        private readonly Net3_1Context _context;
+        public CarouselServices(Net3_1Context _context) {
+        this._context = _context;
+        }
         public List<CarouselFirst> GetCarouselList()
         {
-            return new List<CarouselFirst>() {
-                 new CarouselFirst("gallery-desktop-01.jpg","gallery-mobile-01.jpg"),
-                 new CarouselFirst("gallery-desktop-02.jpg","gallery-mobile-02.jpg"),
-                 new CarouselFirst("gallery-desktop-03.jpg","gallery-mobile-03.jpg"),
-                 new CarouselFirst("gallery-desktop-04.jpg","gallery-mobile-04.jpg"),
-                 new CarouselFirst("gallery-desktop-05.jpg","gallery-mobile-05.jpg"),
-                 new CarouselFirst("gallery-desktop-06.jpg","gallery-mobile-06.jpg"),
-                 new CarouselFirst("gallery-desktop-07.jpg","gallery-mobile-07.jpg"),
-                 new CarouselFirst("gallery-desktop-08.jpg","gallery-mobile-08.jpg")
-            };
+            return _context.carouselFirsts.Where(e => e.Id == 1).ToList();
+            //return new List<CarouselFirst>() {
+            //     new CarouselFirst("gallery-desktop-01.jpg","gallery-mobile-01.jpg"),
+            //     new CarouselFirst("gallery-desktop-02.jpg","gallery-mobile-02.jpg"),
+            //     new CarouselFirst("gallery-desktop-03.jpg","gallery-mobile-03.jpg"),
+            //     new CarouselFirst("gallery-desktop-04.jpg","gallery-mobile-04.jpg"),
+            //     new CarouselFirst("gallery-desktop-05.jpg","gallery-mobile-05.jpg"),
+            //     new CarouselFirst("gallery-desktop-06.jpg","gallery-mobile-06.jpg"),
+            //     new CarouselFirst("gallery-desktop-07.jpg","gallery-mobile-07.jpg"),
+            //     new CarouselFirst("gallery-desktop-08.jpg","gallery-mobile-08.jpg")
+            //};
 
         }
 

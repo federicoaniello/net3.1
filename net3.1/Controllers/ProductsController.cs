@@ -10,7 +10,7 @@ namespace net3._1.Controllers
     {
         //private readonly net3_1Context _context;
         private readonly CarouselServices _backend;
-        public ProductsController(net3_1Context context, CarouselServices backend)
+        public ProductsController(Net3_1Context context, CarouselServices backend)
         {
             //_context = context;
             _backend = backend;

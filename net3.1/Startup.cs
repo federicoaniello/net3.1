@@ -25,8 +25,8 @@ namespace net3._1
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
-            services.AddDbContext<net3_1Context>(options =>
-                   options.UseNpgsql(Configuration.GetConnectionString("net3_1Context")));
+            services.AddDbContext<Net3_1Context>(options =>
+                   options.UseNpgsql(Configuration.GetConnectionString("postgresdb")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

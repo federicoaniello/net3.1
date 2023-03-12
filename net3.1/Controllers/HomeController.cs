@@ -11,9 +11,9 @@ namespace net3._1.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly CarouselServices _carouselServices;
-        private readonly net3_1Context _context;
+        private readonly Net3_1Context _context;
 
-        public HomeController(ILogger<HomeController> logger, CarouselServices carouselServices, net3_1Context context)
+        public HomeController(ILogger<HomeController> logger, CarouselServices carouselServices, Net3_1Context context)
         {
             _logger = logger;
             _carouselServices = carouselServices;
